@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 
 // make an enum for Player1 and Player2
 public enum PlayerNum
@@ -90,6 +90,11 @@ public class PlantController : MonoBehaviour
     void Update()
     {
         if (canMove) HandleInput();
+    }
+
+    public void Jump(InputAction.CallbackContext context)
+    {
+        
     }
 
     void HandleInput()
