@@ -31,9 +31,8 @@ public class PlayerKeys
 public class PlantController : MonoBehaviour
 {
     public PlayerNum playerNum;
-    
-    [SerializeField]
-    private int CountFliesEaten = 0;
+
+    [SerializeField] private int CountFliesEaten = 0;
 
     PlayerKeys player1Keys =
         new PlayerKeys(KeyCode.UpArrow, KeyCode.RightArrow, KeyCode.LeftArrow);
@@ -45,9 +44,29 @@ public class PlantController : MonoBehaviour
     public float growthRate = 0.1f;
     public float maxDist = 1.0f;
     public float maxDistIncrease = 1f;
-
+    public bool canMove = false;
     LineRenderer neck;
     public Transform plantHead;
+
+
+    private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
+
+    private void OnDestroy() => GameManager.OnBeforeStateChanged -= OnStateChanged;
+
+
+    void OnStateChanged(GameState newState)
+    {
+        if (newState == GameState.InGame)
+        {
+            CountFliesEaten = 0;
+            canMove = true;
+        }
+        else
+        {
+            canMove = false;
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -68,7 +87,7 @@ public class PlantController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleInput();
+        if (canMove) HandleInput();
     }
 
     void HandleInput()
@@ -110,10 +129,11 @@ public class PlantController : MonoBehaviour
         neck.SetPosition(0, this.transform.position);
         neck.SetPosition(1, plantHead.position);
     }
-    
+
     public void OnFlyEaten()
     {
         CountFliesEaten++;
-        maxDist+=maxDistIncrease;
+        ResetPosition();
+        maxDist += maxDistIncrease;
     }
 }
