@@ -2,7 +2,7 @@
     "name": "PlantControls",
     "maps": [
         {
-            "name": "Player",
+            "name": "Gameplay",
             "id": "64f54f95-587b-4709-b0fb-817c44d7f172",
             "actions": [
                 {
@@ -10,6 +10,24 @@
                     "type": "PassThrough",
                     "id": "fb5eddfb-e7e6-4958-9968-d69e5e818666",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Reset",
+                    "type": "Button",
+                    "id": "4dea063b-adb6-4c80-989a-22ea296c22e6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Exit",
+                    "type": "Button",
+                    "id": "a55f2c21-cd5f-47ad-b370-5e96259a6e57",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -125,32 +143,26 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "New action map",
-            "id": "82da8d73-6593-4ebc-a825-4e743fa0db37",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "17af3dd9-b2e6-4643-ae76-8134517f2572",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "3287aab1-c205-4ac3-88a6-b7d77b2f6227",
-                    "path": "",
+                    "id": "68f2e819-864c-4cc5-8b08-9c81c95b3223",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Player1",
-                    "action": "New action",
+                    "groups": "Player2",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "61aaeea4-53b0-420d-87a2-25134eccf673",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player2",
+                    "action": "Exit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
