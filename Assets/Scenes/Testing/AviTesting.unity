@@ -1321,7 +1321,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2093654787}
         m_TargetAssemblyTypeName: PlantController, Assembly-CSharp
-        m_MethodName: Grow
+        m_MethodName: Move
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
