@@ -39,6 +39,7 @@ public abstract class BaseFly : MonoBehaviour
         if (col.gameObject.CompareTag("Plant"))
         {
             Debug.Log("Fly collided with " + col.gameObject.name);
+            
             PlantController plant = col.GetComponentInParent<PlantController>();
             if (plant != null)
             {

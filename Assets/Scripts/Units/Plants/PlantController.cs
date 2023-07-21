@@ -38,6 +38,8 @@ public class PlantController : MonoBehaviour
         new PlayerKeys(KeyCode.UpArrow, KeyCode.RightArrow, KeyCode.LeftArrow);
 
     PlayerKeys player2Keys = new PlayerKeys(KeyCode.W, KeyCode.D, KeyCode.A);
+    
+    
     PlayerKeys myKeys;
 
     public float RotateSpeed = 100f;
@@ -103,6 +105,7 @@ public class PlantController : MonoBehaviour
         }
 
 
+        // TODO: prevent going below screen
         // if the player presses the left or right arrow keys, rotate the plant around the z axis
         if (Input.GetKey(myKeys.leftKey))
             transform.Rotate(Vector3.forward * -RotateSpeed * Time.deltaTime);
