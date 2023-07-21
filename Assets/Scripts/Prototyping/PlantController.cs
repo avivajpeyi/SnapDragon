@@ -31,21 +31,20 @@ public class PlayerKeys
 public class PlantController : MonoBehaviour
 {
     public PlayerNum playerNum;
-
-
-    KeyCode jumpKey;
-    KeyCode leftKey;
-    KeyCode rightKey;
+    
+    [SerializeField]
+    private int CountFliesEaten = 0;
 
     PlayerKeys player1Keys =
-        new PlayerKeys(KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.RightArrow);
+        new PlayerKeys(KeyCode.UpArrow, KeyCode.RightArrow, KeyCode.LeftArrow);
 
-    PlayerKeys player2Keys = new PlayerKeys(KeyCode.W, KeyCode.A, KeyCode.D);
+    PlayerKeys player2Keys = new PlayerKeys(KeyCode.W, KeyCode.D, KeyCode.A);
     PlayerKeys myKeys;
 
     public float RotateSpeed = 100f;
     public float growthRate = 0.1f;
     public float maxDist = 1.0f;
+    public float maxDistIncrease = 1f;
 
     LineRenderer neck;
     public Transform plantHead;
@@ -81,7 +80,7 @@ public class PlantController : MonoBehaviour
         }
         else
         {
-            Reset();
+            ResetPosition();
         }
 
 
@@ -98,18 +97,23 @@ public class PlantController : MonoBehaviour
 
     public void Grow()
     {
-        // move plant head local position forward until it reaches maxDist
         if (plantHead.localPosition.y < maxDist)
         {
             plantHead.localPosition += new Vector3(0, growthRate, 0);
         }
     }
 
-    public void Reset()
+    public void ResetPosition()
     {
         // back to original position
         plantHead.localPosition = new Vector3(0, 0, 0);
         neck.SetPosition(0, this.transform.position);
         neck.SetPosition(1, plantHead.position);
+    }
+    
+    public void OnFlyEaten()
+    {
+        CountFliesEaten++;
+        maxDist+=maxDistIncrease;
     }
 }
