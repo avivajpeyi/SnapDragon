@@ -2,6 +2,8 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
+UserSettings/Layouts/default-2021.dwlt
+
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -60,3 +62,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+ProjectSettings/SceneTemplateSettings.json
+UserSettings/Layouts/default-2021.dwlt
+UserSettings/EditorUserSettings.asset
