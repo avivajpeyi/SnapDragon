@@ -5,14 +5,25 @@ using UnityEngine;
 public class LineFly : BaseFly
 {
 
-    public float moveSpeed = 2f;
+    public LineFly(){
+        flyType = BaseFly.FlyType.Line;
+    }
 
-    public LineFly() {
-        // Sprite = ____
+    void Start() {
+        base.BaseFlyInit();
+        LineFlyInit();
+    }
+
+    public float moveSpeed = 2f;
+    public Vector3 direction;
+    public float movementAngle;
+
+    private void LineFlyInit() {
+        movementAngle = Random.value * 2f * Mathf.PI;
         flyValue = 1;
     }
 
     public override void Move() {
-        transform.position += new Vector3(1,0,0) * moveSpeed * Time.deltaTime;
+        transform.position += new Vector3(Mathf.Sin(movementAngle), Mathf.Cos(movementAngle), 0) * moveSpeed * Time.deltaTime;
     }
 }
