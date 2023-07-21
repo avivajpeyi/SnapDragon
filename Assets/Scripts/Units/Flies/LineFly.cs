@@ -15,7 +15,6 @@ public class LineFly : BaseFly
     }
 
     public float moveSpeed = 2f;
-    public Vector3 direction;
     public float movementAngle;
 
     private void LineFlyInit() {
