@@ -101,7 +101,7 @@ public class PlantController : MonoBehaviour
         if (canMove) HandleInput();
     }
 
-    public void Grow(InputAction.CallbackContext context)
+    public void Move(InputAction.CallbackContext context)
     {
         Debug.Log("grow()" + context);
         if (context.ReadValue<Vector2>().magnitude > 0)
