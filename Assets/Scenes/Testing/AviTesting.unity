@@ -1287,6 +1287,65 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &766398991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2441773434239561239, guid: 0c60ee5447a6743768499c944d680384, type: 3}
+  m_PrefabInstance: {fileID: 2441773432895313047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &766398994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766398991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 435712ce8f89d4d0294c3d3a41bf537f, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2093654787}
+        m_TargetAssemblyTypeName: PlantController, Assembly-CSharp
+        m_MethodName: Grow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fb5eddfb-e7e6-4958-9968-d69e5e818666
+    m_ActionName: Gameplay/Movement[/Keyboard/w,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4dea063b-adb6-4c80-989a-22ea296c22e6
+    m_ActionName: Gameplay/Reset[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a55f2c21-cd5f-47ad-b370-5e96259a6e57
+    m_ActionName: Gameplay/Exit[/Keyboard/escape]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Player1
+  m_DefaultActionMap: Gameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &876603247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,6 +2144,17 @@ MonoBehaviour:
   flyType: 0
   canMove: 1
   moveSpeed: 0
+--- !u!114 &2093654787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2441773434390272692, guid: 0c60ee5447a6743768499c944d680384, type: 3}
+  m_PrefabInstance: {fileID: 2441773432895313047}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36fdc5789c7c347b3a50ad23a9a97105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2113737535
 GameObject:
   m_ObjectHideFlags: 0
