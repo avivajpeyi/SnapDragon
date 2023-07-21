@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ccc43efeac704884ba9043d7ca4554c
+guid: 85aacd01cf1324df8b88c7688ea293a7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,55 +117,97 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fly_0
+      name: dragon_0
       rect:
         serializedVersion: 2
-        x: 66
-        y: 752
-        width: 390
-        height: 279
+        x: 97
+        y: 2014
+        width: 769
+        height: 634
       alignment: 9
-      pivot: {x: 0.3709143, y: 0.31311318}
+      pivot: {x: 0.15125896, y: 0.39962587}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c55584f165d634d65a66d3eac74330d6
-      internalID: -1708513577
+      spriteID: 90365fdd0e73545ccaca7796d4cc9ae7
+      internalID: 1979015636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fly_1
+      name: dragon_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 218
-        width: 396
-        height: 268
+        x: 998
+        y: 2014
+        width: 767
+        height: 634
       alignment: 9
-      pivot: {x: 0.3683297, y: 0.31885985}
+      pivot: {x: 0.15627547, y: 0.39962626}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ecbca67397a04bfd822d03a0e4ad245
-      internalID: -1253870661
+      spriteID: 600f989c42972466f943ba344d13b7f6
+      internalID: -1999492723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fly_2
+      name: dragon_2
       rect:
         serializedVersion: 2
-        x: 224
-        y: 485
+        x: 71
+        y: 1123
+        width: 688
+        height: 634
+      alignment: 9
+      pivot: {x: 0.16966166, y: 0.39245722}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710ee9fbd3b9a41728071fc5ab2cbec2
+      internalID: -893650474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon_3
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 1119
+        width: 454
+        height: 633
+      alignment: 9
+      pivot: {x: 0.2597116, y: 0.41383013}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c15839e8ee34f47409196c21f918ec4a
+      internalID: 1892231453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1 dragon mout animation_5
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 1042
         width: 11
-        height: 7
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +215,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fb4f103642824ce8be7994d4c2b12c7
-      internalID: -319456877
+      spriteID: a5547c460561040b4a7fd3417c38df1c
+      internalID: -256689247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon_4
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 223
+        width: 453
+        height: 633
+      alignment: 9
+      pivot: {x: 0.25918135, y: 0.3994687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5443d6f7cd9a485fbf68eb5694c6d3d
+      internalID: -41881828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dragon_5
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 214
+        width: 767
+        height: 633
+      alignment: 9
+      pivot: {x: 0.15034941, y: 0.3994684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad6768ad6fe74a6a98103b090a4b1b9
+      internalID: 316457950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1 dragon mout animation_8
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 142
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2043d281bc5c45a49c72b818f7eb1f5
+      internalID: 249259026
       vertices: []
       indices: 
       edges: []
@@ -190,9 +295,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fly_0: -1708513577
-      fly_1: -1253870661
-      fly_2: -319456877
+      1 dragon mout animation_3: -1318212161
+      1 dragon mout animation_5: -256689247
+      1 dragon mout animation_8: 249259026
+      dragon_0: 1979015636
+      dragon_1: -1999492723
+      dragon_2: -893650474
+      dragon_3: 1892231453
+      dragon_4: -41881828
+      dragon_5: 316457950
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
