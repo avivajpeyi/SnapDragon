@@ -4,6 +4,7 @@
 #
 UserSettings/Layouts/default-2021.dwlt
 .vscode/
+UserSettings/Layouts/CurrentMaximizeLayout.dwlt
 
 /[Ll]ibrary/
 /[Tt]emp/
@@ -66,3 +67,4 @@ crashlytics-build.properties
 ProjectSettings/SceneTemplateSettings.json
 UserSettings/Layouts/default-2021.dwlt
 UserSettings/EditorUserSettings.asset
+UserSettings/Layouts/default-2021.dwlt

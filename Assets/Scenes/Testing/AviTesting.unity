@@ -276,11 +276,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5617963191478071993, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].time
-      value: 0.9953003
+      value: 0.98535156
       objectReference: {fileID: 0}
     - target: {fileID: 5617963191478071993, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.79166603
+      value: 0.5264721
       objectReference: {fileID: 0}
     - target: {fileID: 5617963191478071993, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
@@ -292,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5617963191478071993, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].value
-      value: 0.78125
+      value: 0.3447876
       objectReference: {fileID: 0}
     - target: {fileID: 5617963191478071993, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inSlope
@@ -359,11 +359,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneWidth: 0
   flySprite: {fileID: 0}
   flyValue: 1
   flyType: 3
   canMove: 1
   moveSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
+  movementAngle: 0
 --- !u!58 &185991766
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -593,11 +596,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneWidth: 0
   flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
+  movementAngle: 0
 --- !u!58 &532890118
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -959,11 +965,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneWidth: 0
   flySprite: {fileID: 0}
   flyValue: 1
   flyType: 3
   canMove: 1
   moveSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
+  movementAngle: 0
 --- !u!58 &659071640
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1377,11 +1386,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneWidth: 0
   flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
+  movementAngle: 0
 --- !u!58 &876603249
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1580,11 +1592,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneWidth: 0
   flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
+  movementAngle: 0
 --- !u!58 &1332785606
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1699,11 +1714,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneWidth: 0
   flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
+  movementAngle: 0
 --- !u!58 &1579141385
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1818,11 +1836,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneWidth: 0
   flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
+  movementAngle: 0
 --- !u!58 &1707919158
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2020,11 +2041,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneWidth: 0
   flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
+  movementAngle: 0
 --- !u!1 &2035119581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,11 +2163,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneWidth: 0
   flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
+  movementAngle: 0
 --- !u!114 &2093654787 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2441773434390272692, guid: 0c60ee5447a6743768499c944d680384, type: 3}
@@ -2186,11 +2213,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneWidth: 0
   flySprite: {fileID: 0}
   flyValue: 1
   flyType: 3
   canMove: 1
   moveSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
+  movementAngle: 0
 --- !u!58 &2113737537
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2305,11 +2335,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneWidth: 0
   flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
+  direction: {x: 0, y: 0, z: 0}
+  movementAngle: 0
 --- !u!58 &2123075263
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2506,11 +2539,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5617963191478071993, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].time
-      value: 0.9953003
+      value: 0.98535156
       objectReference: {fileID: 0}
     - target: {fileID: 5617963191478071993, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.79166603
+      value: 0.5264721
       objectReference: {fileID: 0}
     - target: {fileID: 5617963191478071993, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
@@ -2522,7 +2555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5617963191478071993, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[3].value
-      value: 0.78125
+      value: 0.3447876
       objectReference: {fileID: 0}
     - target: {fileID: 5617963191478071993, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inSlope

@@ -6,9 +6,21 @@ using UnityEngine;
 
 public abstract class BaseFly : MonoBehaviour
 {
+    public float sceneWidth;
     public Sprite flySprite;
     public float flyValue;
-    public FlyFactory.FlyType flyType;
+    public FlyType flyType;
+
+    public BaseFly() { 
+    }
+
+    void Start() {
+        BaseFlyInit();
+    }
+
+    protected void BaseFlyInit() {
+        sceneWidth = Camera.main.orthographicSize * 2f * Camera.main.aspect;
+    }
 
     public bool canMove = true;
     
@@ -57,7 +69,7 @@ public abstract class BaseFly : MonoBehaviour
                 
                 // HERE WE CAN ALSO ADD LOGIC OF FLY-VALUE MULTIPLIER
                 
-                if (flyType == FlyFactory.FlyType.Winning)
+                if (flyType == FlyType.Winning)
                 {
                     GameManager.Instance.ChangeState(GameState.GameOver);
                 }
@@ -72,4 +84,11 @@ public abstract class BaseFly : MonoBehaviour
     }
 
     public abstract void Move();
+
+    public enum FlyType {
+        Line,
+        Circle,
+        Random,
+        Winning
+    }
 }
