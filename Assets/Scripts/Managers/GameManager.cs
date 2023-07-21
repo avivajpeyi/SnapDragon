@@ -23,6 +23,17 @@ public class GameManager : StaticInstance<GameManager>
         ChangeState(GameState.InGame);
     }
 
+    private void Update()
+    {
+        // If press R
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            // Restart the game
+            ChangeState(GameState.Starting);
+            
+        }
+    }
+
     public void ChangeState(GameState newState) {
         OnBeforeStateChanged?.Invoke(newState);
 
