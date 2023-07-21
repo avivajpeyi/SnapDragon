@@ -3,7 +3,10 @@ guid: 91b1e8eaa3b78bf46b8758bf04eaa6f1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - flySprite: {instanceID: 0}
+  - flyDeathSound: {fileID: 8300000, guid: f998c6451f9154c47a6440b21b677443, type: 3}
+  - flyDeathParticles: {fileID: 8281994214288381243, guid: b60688b7d095b4be6a9f08d7244687e0, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
