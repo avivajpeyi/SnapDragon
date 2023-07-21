@@ -21,7 +21,6 @@ public abstract class BaseFly : MonoBehaviour
     protected void BaseFlyInit() {
         sceneWidth = Camera.main.orthographicSize * 2f * Camera.main.aspect;
     }
-    public FlyFactory.FlyType flyType;
 
     public bool canMove = true;
     
@@ -70,7 +69,7 @@ public abstract class BaseFly : MonoBehaviour
                 
                 // HERE WE CAN ALSO ADD LOGIC OF FLY-VALUE MULTIPLIER
                 
-                if (flyType == FlyFactory.FlyType.Winning)
+                if (flyType == FlyType.Winning)
                 {
                     GameManager.Instance.ChangeState(GameState.GameOver);
                 }
