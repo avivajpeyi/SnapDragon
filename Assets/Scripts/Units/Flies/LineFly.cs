@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class LineFly : BaseFly
 {
-
-    public LineFly(){
-        flyType = BaseFly.FlyType.Line;
-    }
-
-    void Start() {
-        base.BaseFlyInit();
-        LineFlyInit();
-    }
-
     public float moveSpeed = 2f;
-    public Vector3 direction;
     public float movementAngle;
 
-    private void LineFlyInit() {
-        movementAngle = Random.value * 2f * Mathf.PI;
-        flyValue = 1;
+    private Vector2 direction;
+
+    public LineFly()
+    {
+        type = BaseFly.FlyType.Line;
     }
 
-    public override void Move() {
-        transform.position += new Vector3(Mathf.Sin(movementAngle), Mathf.Cos(movementAngle), 0) * moveSpeed * Time.deltaTime;
+    public override void SetInitialReferences()
+    {
+        movementAngle = Random.value * 2f * Mathf.PI;
+        flyValue = 1;
+        direction = new Vector2(Mathf.Sin(movementAngle), Mathf.Cos(movementAngle));
+        // Send the fly off in this direction (apply a force, no drag)
+        rb.AddForce(direction * moveSpeed, ForceMode2D.Impulse);
+    }
+
+
+    public override void Move()
+    {
+        // rb.velocity = direction * moveSpeed;
     }
 }

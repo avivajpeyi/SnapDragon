@@ -3,191 +3,106 @@
     "maps": [
         {
             "name": "Gameplay",
-            "id": "64f54f95-587b-4709-b0fb-817c44d7f172",
+            "id": "1a9734a7-0aad-4c1e-99e7-3e895bb196e4",
             "actions": [
                 {
-                    "name": "Movement",
-                    "type": "PassThrough",
-                    "id": "fb5eddfb-e7e6-4958-9968-d69e5e818666",
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "4eb2749c-50ff-4824-9f3b-2d797acdf691",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Reset",
-                    "type": "Button",
-                    "id": "4dea063b-adb6-4c80-989a-22ea296c22e6",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Exit",
-                    "type": "Button",
-                    "id": "a55f2c21-cd5f-47ad-b370-5e96259a6e57",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
-                    "name": "WASD",
-                    "id": "afea5405-6950-4ecf-a4f4-6bba08c97f2f",
+                    "name": "controller",
+                    "id": "b32bcf8d-2572-4647-9edb-032a8a75ee26",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "4fe06657-571b-4098-a81f-1c30b393bddf",
-                    "path": "<Keyboard>/w",
+                    "id": "b063ca3f-c802-4ac1-a4b2-475da7a9d248",
+                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Movement",
+                    "groups": "scheme1",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "1d3d215a-1687-42db-bb0f-d8282fb8ecb7",
+                    "id": "7a6de53b-7932-4204-b75a-572251dbf50e",
                     "path": "",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Movement",
+                    "groups": "scheme1",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "7aff13ff-efbe-41a5-819d-163a1db011ae",
-                    "path": "<Keyboard>/a",
+                    "id": "909bfbfe-6b0f-4d53-bf33-a25e55fe458f",
+                    "path": "<XInputController>/dpad/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Movement",
+                    "groups": "scheme1",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "777e4d97-0eef-4138-b402-f812ae96e196",
-                    "path": "<Keyboard>/d",
+                    "id": "72496de8-0acb-4dc9-9a66-e715e1e36923",
+                    "path": "<XInputController>/dpad/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Movement",
+                    "groups": "scheme1",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "ARROWS",
-                    "id": "d8bc4688-f621-40cc-939a-d928d0c85cbc",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "b24bbc81-a1c8-4721-b370-b22ba3566842",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "be496ee9-d2c0-459a-baca-7835d37e67cc",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "45d4308e-31e2-4591-b549-bd38e3302ee7",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "6ae0b6fc-94c7-4964-9fe3-c45c6c2aee18",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "68f2e819-864c-4cc5-8b08-9c81c95b3223",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Player2",
-                    "action": "Reset",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "61aaeea4-53b0-420d-87a2-25134eccf673",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Player2",
-                    "action": "Exit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }
     ],
     "controlSchemes": [
         {
-            "name": "Player1",
-            "bindingGroup": "Player1",
+            "name": "scheme1",
+            "bindingGroup": "scheme1",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XInputController>",
                     "isOptional": false,
                     "isOR": false
                 }
             ]
         },
         {
-            "name": "Player2",
-            "bindingGroup": "Player2",
+            "name": "scheme2",
+            "bindingGroup": "scheme2",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
-                    "isOptional": true,
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XInputController>",
+                    "isOptional": false,
                     "isOR": false
                 }
             ]

@@ -22,12 +22,17 @@ public class FlyDVD : BaseFly
     public Vector3 direction = new Vector3(1, 1);
 
 
-    public FlyDVD() {
-        // Sprite = ____
-        flyValue = 1;
-        Debug.Log("Helloworld!   DVDFly's FlyValue changed to 1");
-        // direction = new Vector3(1, 1);
-        direction = direction.normalized;
+    // public FlyDVD() {
+    //     // Sprite = ____
+    //     flyValue = 1;
+    //     Debug.Log("Helloworld!   DVDFly's FlyValue changed to 1");
+    //     // direction = new Vector3(1, 1);
+    //     direction = direction.normalized;
+    // }
+
+    public override void SetInitialReferences()
+    {
+        // pass
     }
 
     public override void Move() {
