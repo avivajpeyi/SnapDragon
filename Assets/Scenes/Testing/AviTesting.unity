@@ -377,7 +377,6 @@ MonoBehaviour:
   flyType: 3
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &185991766
 CircleCollider2D:
@@ -614,7 +613,6 @@ MonoBehaviour:
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &532890118
 CircleCollider2D:
@@ -993,7 +991,6 @@ MonoBehaviour:
   flyType: 3
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &659071640
 CircleCollider2D:
@@ -1355,7 +1352,6 @@ MonoBehaviour:
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &876603249
 CircleCollider2D:
@@ -1524,6 +1520,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1326283278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1326283280}
+  - component: {fileID: 1326283279}
+  m_Layer: 0
+  m_Name: arduino
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1326283279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326283278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc5f48af2cffd747a079fe8c632e2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portName: COM7
+  baudRate: 9600
+  messageListener: {fileID: 0}
+  reconnectionDelay: 1000
+  maxUnreadMessages: 1
+--- !u!4 &1326283280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326283278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1332785604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,7 +1606,6 @@ MonoBehaviour:
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &1332785606
 CircleCollider2D:
@@ -1683,7 +1727,6 @@ MonoBehaviour:
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &1579141385
 CircleCollider2D:
@@ -1805,7 +1848,6 @@ MonoBehaviour:
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &1707919158
 CircleCollider2D:
@@ -2010,7 +2052,6 @@ MonoBehaviour:
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!1 &2035119581
 GameObject:
@@ -2132,7 +2173,6 @@ MonoBehaviour:
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!1 &2113737535
 GameObject:
@@ -2171,7 +2211,6 @@ MonoBehaviour:
   flyType: 3
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &2113737537
 CircleCollider2D:
@@ -2293,7 +2332,6 @@ MonoBehaviour:
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &2123075263
 CircleCollider2D:
