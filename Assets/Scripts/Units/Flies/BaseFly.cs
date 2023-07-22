@@ -63,8 +63,9 @@ public abstract class BaseFly : MonoBehaviour
     {
         currentX = transform.position.x;
         if (canMove) Move();
-        oldX = currentX;
         sr.flipX = hasFlipped;
+        oldX = currentX;
+
     }
 
 
