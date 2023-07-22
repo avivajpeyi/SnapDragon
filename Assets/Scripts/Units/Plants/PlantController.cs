@@ -120,6 +120,7 @@ public class PlantController : MonoBehaviour
         if (context.ReadValue<Vector2>().y > 0)
         {
             growKeyDown = true;
+            Debug.Log("grow");
         }
         else 
         {
@@ -130,10 +131,12 @@ public class PlantController : MonoBehaviour
         if (context.ReadValue<Vector2>().x > 0)
         {
             leftKeyDown = true;
+            Debug.Log("left");
         } 
         else if (context.ReadValue<Vector2>().x < 0)
         {
             rightKeyDown = true;
+            Debug.Log("right");
         }
         else
         {
@@ -154,15 +157,17 @@ public class PlantController : MonoBehaviour
         }
         else
         {
-            if (Input.GetKey(myKeys.leftKey) || Input.GetKey(myKeys.rightKey))
-            {
+            // if (Input.GetKey(myKeys.leftKey) || Input.GetKey(myKeys.rightKey))
+            // {
                 // TODO: prevent going below screen
                 // if the player presses the left or right arrow keys, rotate the plant around the z axis
                 if (Input.GetKey(myKeys.leftKey))
+                // if (leftKeyDown)
                     transform.Rotate(Vector3.forward * -RotateSpeed * Time.deltaTime);
                 else if (Input.GetKey(myKeys.rightKey))
+                // if (rightKeyDown)
                     transform.Rotate(Vector3.forward * RotateSpeed * Time.deltaTime);
-            }
+            // }
             ResetPosition();
         }
         
