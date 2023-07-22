@@ -17,13 +17,7 @@ public class PlantHead : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Dragon collides with " + other.gameObject.name);
-        if (other.gameObject.CompareTag("Plant"))
-        {
-            Debug.Log("Make out time!");
-            plantController.ResetPosition();
-        }
-        else if (other.gameObject.CompareTag("Fly"))
+        if (other.gameObject.CompareTag("Fly"))
         {
             plantController.OnFlyEaten(other.gameObject.GetComponent<BaseFly>().flyValue);
             AudioSource.PlayClipAtPoint(flyEatenFX, transform.position);

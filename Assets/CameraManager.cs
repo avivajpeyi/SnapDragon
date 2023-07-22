@@ -36,7 +36,7 @@ public class CameraManager : StaticInstance<CameraManager>
     public void PrioritizeGoal()
     {
         vcam_goal.Priority = 10;
-        vcam_follow.Priority = 0;
+        vcam_follow.Priority = 5;
         vcam_full.Priority = 0;
         Debug.Log("Camera switch to PrioritizeGoal");
     }
@@ -45,14 +45,14 @@ public class CameraManager : StaticInstance<CameraManager>
     {
         vcam_goal.Priority = 0;
         vcam_follow.Priority = 10;
-        vcam_full.Priority = 0;
+        vcam_full.Priority = 5;
         Debug.Log("Camera switch to PrioritizeFollow");
     }
 
     public void PrioritizeFull()
     {
         vcam_goal.Priority = 0;
-        vcam_follow.Priority = 0;
+        vcam_follow.Priority = 5;
         vcam_full.Priority = 10;
         Debug.Log("Camera switch to PrioritizeFull");
     }

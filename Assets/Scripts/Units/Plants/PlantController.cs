@@ -72,6 +72,8 @@ public class PlantController : MonoBehaviour
     bool leftKeyDown = false;
     bool rightKeyDown = false;
 
+    
+    private CameraManager _cameraManager;
 
     private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
 
@@ -110,6 +112,8 @@ public class PlantController : MonoBehaviour
         {
             myKeys = player2Keys;
         }
+
+        _cameraManager = FindObjectOfType<CameraManager>();
     }
 
     // Update is called once per frame
@@ -202,9 +206,9 @@ public class PlantController : MonoBehaviour
     public void OnFlyEaten(float flyValue)
     {
         _countFliesEaten++;
-        if (_curDist > distanceForFullScreen)
+        if (_curDist > distanceForFullScreen && GameManager.Instance.State == GameState.InGame)
         {
-            CameraManager.Instance.PrioritizeFull();
+            _cameraManager.PrioritizeFull();
         }
         maxDist += flyValue;
     }
