@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyFactory : MonoBehaviour
+public class FlyFactory : Singleton<FlyFactory>
 {
 
     public float sceneWidth;
@@ -24,19 +24,7 @@ public class FlyFactory : MonoBehaviour
     public int randomFlyCount;
     public int randomFlySpawnMax;
     public List<GameObject> flyList = new List<GameObject>();
-
-    private static FlyFactory instance;
-
-    public static FlyFactory Instance {
-        get {
-            if (instance == null)
-            {
-                instance = new GameObject("FlySpawner").AddComponent<FlyFactory>();
-            }
-            return instance;
-        }
-    }
-
+    
 
 
     void Start() {
@@ -102,6 +90,7 @@ public class FlyFactory : MonoBehaviour
         Vector3 summonPosition = generatePosition();
         Quaternion summonRotation = transform.rotation;
         Debug.Log("Prefab: " + prefabType);
+        Debug.Log("PrefabName" + prefabType.name);
         GameObject fly = Instantiate(prefabType, summonPosition, summonRotation);
 
         return fly;
