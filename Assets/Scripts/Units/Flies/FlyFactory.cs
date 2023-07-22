@@ -44,12 +44,6 @@ public class FlyFactory : Singleton<FlyFactory>
                 CreateFly(flyDat.prefab);
             }
         }
-
-        Vector3 summonPosition = generatePosition();
-        Quaternion summonRotation = transform.rotation;
-        GameObject fly = Instantiate(prefabType, summonPosition, summonRotation);
-
-        return fly;
     }
 
     public GameObject CreateFly(GameObject flyPrefab)
