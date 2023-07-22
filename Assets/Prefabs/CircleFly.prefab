@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5169531864941804511}
   - component: {fileID: 5169531864941804320}
   - component: {fileID: 2922599278609590252}
+  - component: {fileID: -1800236578244456037}
   m_Layer: 0
   m_Name: CircleFly
-  m_TagString: Untagged
+  m_TagString: Fly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,10 +98,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c736c4bf9088cd24fa2eb3646e52aab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 0
-  flySprite: {fileID: 0}
   flyValue: 0
   flyType: 1
+  canMove: 1
   moveSpeed: 2
-  isClockwise: 0
+  direction: 0
   eccentricity: 0
+--- !u!58 &-1800236578244456037
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169531864941804322}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

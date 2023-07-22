@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Fly
   - Plant
+  - GameBoundary
+  - GameBoundaryHorizontal
+  - GameBoundaryVerticle
   layers:
   - Default
   - TransparentFX
