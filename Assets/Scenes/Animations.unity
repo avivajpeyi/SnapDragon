@@ -258,12 +258,77 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 732608428195436660, guid: 4cd7966cd9ecd47ad9d4f80571e18448, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 732608428195436660, guid: 4cd7966cd9ecd47ad9d4f80571e18448, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 732608428195436662, guid: 4cd7966cd9ecd47ad9d4f80571e18448, type: 3}
       propertyPath: m_Name
       value: fly_sprite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cd7966cd9ecd47ad9d4f80571e18448, type: 3}
+--- !u!1001 &3279368751636913818
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3279368751227094560, guid: d25252dd5f0954929991fb1a8d2c0de6, type: 3}
+      propertyPath: m_Name
+      value: dragon_head_sprite_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279368751227094567, guid: d25252dd5f0954929991fb1a8d2c0de6, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279368751227094567, guid: d25252dd5f0954929991fb1a8d2c0de6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.383579
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279368751227094567, guid: d25252dd5f0954929991fb1a8d2c0de6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.429031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279368751227094567, guid: d25252dd5f0954929991fb1a8d2c0de6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279368751227094567, guid: d25252dd5f0954929991fb1a8d2c0de6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279368751227094567, guid: d25252dd5f0954929991fb1a8d2c0de6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279368751227094567, guid: d25252dd5f0954929991fb1a8d2c0de6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279368751227094567, guid: d25252dd5f0954929991fb1a8d2c0de6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279368751227094567, guid: d25252dd5f0954929991fb1a8d2c0de6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279368751227094567, guid: d25252dd5f0954929991fb1a8d2c0de6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279368751227094567, guid: d25252dd5f0954929991fb1a8d2c0de6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d25252dd5f0954929991fb1a8d2c0de6, type: 3}
 --- !u!1001 &4279100540952787845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273,7 +338,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4279100541959645504, guid: b27b7219e8b864ac4aa50f833fb54ff7, type: 3}
       propertyPath: m_Name
-      value: dragon_head_sprite
+      value: dragon_head_sprite_1
       objectReference: {fileID: 0}
     - target: {fileID: 4279100541959645517, guid: b27b7219e8b864ac4aa50f833fb54ff7, type: 3}
       propertyPath: m_RootOrder
