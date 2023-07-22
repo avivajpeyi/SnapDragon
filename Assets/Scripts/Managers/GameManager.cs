@@ -19,13 +19,17 @@ public class GameManager : StaticInstance<GameManager>
     // FIXME: Currently, the game starts in the InGame state -- this is just for testing purposes
     void Start()
     {
-        Debug.Log("GAME STARTS IN INGAME STATE " +
-                  "--> CHANGE THIS TO 'STARTING' STATE LATER");
-        ChangeState(GameState.InGame);
+        ChangeState(GameState.Starting);
     }
 
     private void Update()
     {
+        // if any key down
+        if (Input.anyKeyDown && State == GameState.Starting)
+        {
+            ChangeState(GameState.InGame);
+        }
+
         // If press R
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -39,7 +43,10 @@ public class GameManager : StaticInstance<GameManager>
 
     public void ChangeState(GameState newState)
     {
+        Debug.Log("<color=cyan>CHANGE STATE: </color> " + State + "-->" + newState);
+
         OnBeforeStateChanged?.Invoke(newState);
+
 
         State = newState;
         switch (newState)
@@ -68,7 +75,7 @@ public class GameManager : StaticInstance<GameManager>
 
         // Eventually call ChangeState again with your next state
 
-        ChangeState(GameState.InGame);
+        // ChangeState(GameState.InGame);
     }
 
     private void HandleInGame()
