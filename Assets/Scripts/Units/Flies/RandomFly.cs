@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RandomFly : BaseFly
 {
-    float moveMin = 0.5f;
-    float moveMax = 10f;
-    public float moveSpeed;
+    float moveForceMin = 0.5f;
+    float moveForceMax = 10f;
+    public float moveForce;
     float directChangeThresh;
     float movementAngle;
 
@@ -36,9 +36,30 @@ public class RandomFly : BaseFly
         // zero current velocity
         rb.velocity = Vector2.zero;
         // Add small force in new direction
-        rb.AddForce(
-            new Vector2(Mathf.Sin(movementAngle), Mathf.Cos(movementAngle)) * (moveSpeed * 0.1f),
-            ForceMode2D.Impulse);
+        movementAngle = Random.value * 2f * Mathf.PI;
+        moveForce = Random.value * (moveForceMax - moveForceMin) + moveForceMin;
+        Vector2 dir = new Vector2(Mathf.Sin(movementAngle), Mathf.Cos(movementAngle));
+
+        rb.AddForce(dir * moveForce, ForceMode2D.Impulse);
     }
 
+
+    // private void RandomFlyInit() {
+    //     updateMovement();
+    //     flyValue = 3f;
+    //     directChangeThresh = 0.97f;
+    // }
+    //
+    // public override void Move() {
+    //     if (Random.value >= directChangeThresh) {
+    //         updateMovement();
+    //     }
+    //    
+    //     transform.position += new Vector3(Mathf.Sin(movementAngle), Mathf.Cos(movementAngle), 0) * moveSpeed * Time.deltaTime;
+    // }
+    //
+    // private void updateMovement() {
+    //     movementAngle = Random.value * 2f * Mathf.PI;
+    //     moveSpeed = Random.value * (moveMax - moveMin) + moveMin;
+    // }
 }
