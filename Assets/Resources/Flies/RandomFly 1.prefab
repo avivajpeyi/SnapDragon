@@ -150,7 +150,7 @@ MonoBehaviour:
   flyValue: 0
   type: 2
   canMove: 1
-  moveSpeed: 0
+  moveForce: 0
 --- !u!50 &1531208021522929999
 Rigidbody2D:
   serializedVersion: 4

@@ -5,16 +5,36 @@ using UnityEngine;
 public class PlantHead : MonoBehaviour
 {
     PlantController plantController;
-    
-    private void Start() {
+    protected AudioClip flyEatenFX;
+    protected GameObject flyEatenParticles;
+
+    private void Start()
+    {
         plantController = GetComponentInParent<PlantController>();
-    } 
-    private void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log(other);
-         if (other.gameObject.CompareTag("Plant"))
+        flyEatenFX = Resources.Load<AudioClip>("FlyEatenAudio");
+        flyEatenParticles = Resources.Load<GameObject>("FlyEatenFx");
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("Dragon collides with " + other.gameObject.name);
+        if (other.gameObject.CompareTag("Plant"))
         {
-            Debug.Log("Snap!");
+            Debug.Log("Make out time!");
             plantController.ResetPosition();
+        }
+        else if (other.gameObject.CompareTag("Fly"))
+        {
+            plantController.OnFlyEaten();
+            AudioSource.PlayClipAtPoint(flyEatenFX, transform.position);
+            Instantiate(flyEatenParticles, transform.position, Quaternion.identity);
+
+            BaseFly fly = other.gameObject.GetComponent<BaseFly>();
+            fly.OnEaten();
+            if (fly.type == BaseFly.FlyType.Winning)
+            {
+                GameManager.Instance.ChangeState(GameState.GameOver);
+            }
         }
     }
 }

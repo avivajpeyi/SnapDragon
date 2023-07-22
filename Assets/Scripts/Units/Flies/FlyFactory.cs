@@ -5,7 +5,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 
-public class FlyFactory : Singleton<FlyFactory>
+public class FlyFactory : MonoBehaviour
 {
     public int framesPerSpawn;
     public List<FlyData> FlyDataList = new List<FlyData>();
@@ -63,7 +63,8 @@ public class FlyFactory : Singleton<FlyFactory>
         GameObject instantiatedFly = Instantiate(
             flyPrefab,
             RandomPointInBounds(),
-            transform.rotation
+            transform.rotation,
+            transform
         );
         return instantiatedFly;
     }
@@ -95,9 +96,10 @@ public class FlyFactory : Singleton<FlyFactory>
                     Debug.Log("Fly removed");
                 }
             }
+            Destroy(flyG0, 0.1f);
         }
 
-        Destroy(fly.transform.root.gameObject);
+       
     }
 
 

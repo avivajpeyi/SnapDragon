@@ -39,26 +39,30 @@ public class PlantController : MonoBehaviour
         new PlayerKeys(KeyCode.UpArrow, KeyCode.RightArrow, KeyCode.LeftArrow);
 
     PlayerKeys player2Keys = new PlayerKeys(KeyCode.W, KeyCode.D, KeyCode.A);
-    
-    
+
+
     PlayerKeys myKeys;
 
     // [SerializeField]
-    private  float RotateSpeed = 100f;
+    private float RotateSpeed = 100f;
+
     // [SerializeField]
-    private  float growthSpeedMax = 10f;
+    private float growthSpeedMax = 10f;
+
     // [SerializeField]
     private float growthSpeedMin = 0.05f;
+
     // [SerializeField]
-    private float growthAcceleration = 10f;
-    
+    private float growthAcceleration = 5f;
+
 
     private float _curSpeed;
-    
-    [SerializeField]
-    private float _minDist = 0.5f;
+    private float _curDist;
+
+    [SerializeField] private float _minDist = 0.5f;
     public float maxDist = 1.0f;
-    public float maxDistIncrease = 1f;
+
+    float maxDistIncrease = 1f;
     public bool canMove = false;
     LineRenderer neck;
     public Transform plantHead;
@@ -79,10 +83,9 @@ public class PlantController : MonoBehaviour
         {
             ResetStats();
         }
-        
+
         else if (newState == GameState.InGame)
         {
-
             canMove = true;
         }
         else
@@ -122,7 +125,7 @@ public class PlantController : MonoBehaviour
             growKeyDown = true;
             Debug.Log("grow");
         }
-        else 
+        else
         {
             growKeyDown = false;
         }
@@ -132,7 +135,7 @@ public class PlantController : MonoBehaviour
         {
             leftKeyDown = true;
             Debug.Log("left");
-        } 
+        }
         else if (context.ReadValue<Vector2>().x < 0)
         {
             rightKeyDown = true;
@@ -147,57 +150,48 @@ public class PlantController : MonoBehaviour
 
     void HandleInput()
     {
-        
-        
         // if the player presses the space bar, grow the plant
-        if (Input.GetKey(myKeys.jumpKey))
-        // if (growKeyDown)
-        {
-            Grow();
-        }
+        if (Input.GetKey(myKeys.jumpKey)) Grow();
         else
         {
-            // if (Input.GetKey(myKeys.leftKey) || Input.GetKey(myKeys.rightKey))
-            // {
-                // TODO: prevent going below screen
-                // if the player presses the left or right arrow keys, rotate the plant around the z axis
-                if (Input.GetKey(myKeys.leftKey))
-                // if (leftKeyDown)
-                    transform.Rotate(Vector3.forward * -RotateSpeed * Time.deltaTime);
-                else if (Input.GetKey(myKeys.rightKey))
-                // if (rightKeyDown)
-                    transform.Rotate(Vector3.forward * RotateSpeed * Time.deltaTime);
-            // }
+            // TODO: prevent going below screen
+            if (Input.GetKey(myKeys.leftKey))
+                transform.Rotate(Vector3.forward * -RotateSpeed * Time.deltaTime);
+            else if (Input.GetKey(myKeys.rightKey))
+                transform.Rotate(Vector3.forward * RotateSpeed * Time.deltaTime);
+
             ResetPosition();
         }
-        
-        
 
         neck.SetPosition(0, this.transform.position);
         neck.SetPosition(1, plantHead.position);
     }
 
 
+    bool HeadHasNotReachedMaxDist
+    {
+        get
+        {
+            _curDist = Vector3.Distance(plantHead.position, this.transform.position);
+            return _curDist < maxDist;
+        }
+    }
+
     public void Grow()
     {
-        if (plantHead.localPosition.y < maxDist)
+        if (HeadHasNotReachedMaxDist)
         {
-            
-            // Start at max speed, then slow down exponentially as it grows
-            
-            // Decrease speed exponentially while holding down space
-            _curSpeed = Mathf.Max(_curSpeed - growthAcceleration * Time.deltaTime, growthSpeedMin);
-            plantHead.localPosition += new Vector3(0, _curSpeed*Time.deltaTime, 0);
-            
-            // set a min speed
-            
+            float newSpeed = _curSpeed - growthAcceleration * Time.deltaTime;
+            _curSpeed = Mathf.Max(newSpeed, growthSpeedMin);
+            plantHead.localPosition += new Vector3(0, _curSpeed * Time.deltaTime, 0);
         }
     }
 
     public void ResetPosition()
     {
         // back to original y (keep x and z)
-        plantHead.localPosition = new Vector3(plantHead.localPosition.x, _minDist, plantHead.localPosition.z);
+        plantHead.localPosition = new Vector3(plantHead.localPosition.x, _minDist,
+            plantHead.localPosition.z);
         neck.SetPosition(0, this.transform.position);
         neck.SetPosition(1, plantHead.position);
         _curSpeed = growthSpeedMax;
@@ -208,22 +202,14 @@ public class PlantController : MonoBehaviour
         _countFliesEaten++;
         ResetPosition();
         maxDist += maxDistIncrease;
+        growthSpeedMax += growthAcceleration*.5f;
     }
-    
-    
+
+
     public void ResetStats()
     {
         _countFliesEaten = 0;
         maxDist = _minDist;
         ResetPosition();
-    }
-
-    private void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log(other);
-         if (other.gameObject.CompareTag("Plant"))
-        {
-            Debug.Log("Snap!");
-            
-        }
     }
 }
