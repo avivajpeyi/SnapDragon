@@ -8,13 +8,14 @@ public class FlyFactory : MonoBehaviour
     public GameObject CircleFly;
     public GameObject RandomFly;
 
-    public float lineFlySpawnFrequency = 100000000;
+    public float lineFlySpawnFrequency = 100000000; //Need Units
     public float circleFlySpawnFrequency = 20000000;
     public float randomFlySpawnFrequency = 10000000;
 
     private int timeTrack = 0;
 
     void Update() {
+        Debug.Log("HEY");
         
         timeTrack++;
 
