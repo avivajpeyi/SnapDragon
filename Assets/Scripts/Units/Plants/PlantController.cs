@@ -53,16 +53,15 @@ public class PlantController : MonoBehaviour
     private float growthSpeedMin = 0.05f;
 
     // [SerializeField]
-    private float growthAcceleration = 5f;
+    private float speedReduceFactor = 50;
 
 
     private float _curSpeed;
     private float _curDist;
 
     [SerializeField] private float _minDist = 0.5f;
-    public float maxDist = 1.0f;
-
-    float maxDistIncrease = 1f;
+    public float maxDist = 25.0f;
+    
     public bool canMove = false;
     LineRenderer neck;
     public Transform plantHead;
@@ -182,7 +181,7 @@ public class PlantController : MonoBehaviour
     {
         if (HeadHasNotReachedMaxDist)
         {
-            float newSpeed = _curSpeed - growthAcceleration * Time.deltaTime;
+            float newSpeed = _curSpeed - MathF.Pow(_curDist/maxDist,2);
             _curSpeed = Mathf.Max(newSpeed, growthSpeedMin);
             plantHead.localPosition += new Vector3(0, _curSpeed * Time.deltaTime, 0);
         }
@@ -195,15 +194,13 @@ public class PlantController : MonoBehaviour
             plantHead.localPosition.z);
         neck.SetPosition(0, this.transform.position);
         neck.SetPosition(1, plantHead.position);
-        _curSpeed = growthSpeedMax;
+        _curSpeed = MathF.Max(growthSpeedMax - maxDist/speedReduceFactor, growthSpeedMin);
     }
 
-    public void OnFlyEaten()
+    public void OnFlyEaten(float flyValue)
     {
         _countFliesEaten++;
-        ResetPosition();
-        maxDist += maxDistIncrease;
-        // growthSpeedMax -= growthAcceleration*.1f;
+        maxDist += flyValue;
     }
 
 
