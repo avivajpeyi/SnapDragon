@@ -33,7 +33,6 @@ public abstract class BaseFly : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-
         if (col.gameObject.CompareTag("Plant"))
         {
             Debug.Log("Fly collided with " + col.gameObject.name);
@@ -59,9 +58,9 @@ public abstract class BaseFly : MonoBehaviour
                 {
                     GameManager.Instance.ChangeState(GameState.GameOver);
                 }
-                FlyFactory father = FlyFactory.Instance;
-                father.destroyFly(this, this.flyType);
-                Destroy(this.gameObject);
+                Debug.Log(this.gameObject);
+                FlyFactory.Instance.destroyFly(this.gameObject);
+                // Destroy(this.gameObject);
             }
 
             

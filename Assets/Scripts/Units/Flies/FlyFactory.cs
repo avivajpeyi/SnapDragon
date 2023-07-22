@@ -15,17 +15,15 @@ public class FlyFactory : MonoBehaviour
     private int frameCount;
 
     public float lineFlySpawnFrequency;
-    public float lineFlySpawnMean;
+    public int lineFlyCount;
     public int lineFlySpawnMax;
     public float circleFlySpawnFrequency;
-    public float circleFlySpawnMean;
+    public int circleFlyCount;
     public int circleFlySpawnMax;
     public float randomFlySpawnFrequency;
-    public float randomFlySpawnMean;
+    public int randomFlyCount;
     public int randomFlySpawnMax;
-    public List<LineFly> lineFlyList = new List<LineFly>();
-    public List<CircleFly> circleFlyList = new List<CircleFly>();
-    public List<RandomFly> randomFlyList = new List<RandomFly>();
+    public List<GameObject> flyList = new List<GameObject>();
 
     private static FlyFactory instance;
 
@@ -46,14 +44,14 @@ public class FlyFactory : MonoBehaviour
     framesPerSpawn = 540;
     frameCount = 0;
     lineFlySpawnFrequency = 1;
-    lineFlySpawnMean = 6;
     lineFlySpawnMax = 10;
     circleFlySpawnFrequency = 2;
-    circleFlySpawnMean = 3;
     circleFlySpawnMax = 6;
     randomFlySpawnFrequency = 3;
-    randomFlySpawnMean = 2;
     randomFlySpawnMax = 4; 
+    lineFlyCount = 0;
+    circleFlyCount = 0;
+    randomFlyCount = 0;
     }
 
     void Update() {
@@ -64,47 +62,47 @@ public class FlyFactory : MonoBehaviour
             Debug.Log("Spawn Tick");
             frameCount = 0;
         }
-        if (Random.value < (1 - lineFlyList.Count/lineFlySpawnMax)) {
-            lineFlyList.Add((LineFly) CreateFly(BaseFly.FlyType.Line));
+        if (Random.value < (1 - lineFlyCount/lineFlySpawnMax)) {
+            // flyList.Add(CreateFly(BaseFly.FlyType.Line));
+            CreateFly(BaseFly.FlyType.Line);
+            lineFlyCount++;
         }
-        if (Random.value < (1 - circleFlyList.Count/circleFlySpawnMax)) {
-            circleFlyList.Add((CircleFly) CreateFly(BaseFly.FlyType.Circle));
+        if (Random.value < (1 - circleFlyCount/circleFlySpawnMax)) {
+            // flyList.Add(CreateFly(BaseFly.FlyType.Circle));
+            CreateFly(BaseFly.FlyType.Circle);
+            circleFlyCount++;
         }
-        if (Random.value < (1 - randomFlyList.Count/randomFlySpawnMax)) {
-            randomFlyList.Add((RandomFly) CreateFly(BaseFly.FlyType.Random));
+        if (Random.value < (1 - randomFlyCount/randomFlySpawnMax)) {
+            // flyList.Add(CreateFly(BaseFly.FlyType.Random));
+            CreateFly(BaseFly.FlyType.Random);
+            randomFlyCount++;
         }
     }
 
-    public BaseFly CreateFly(BaseFly.FlyType type) {
-        BaseFly fly = null;
+    public GameObject CreateFly(BaseFly.FlyType type) {
         GameObject prefabType;
 
         switch (type)
         {
             case BaseFly.FlyType.Line:
-                fly = new GameObject("LineFly").AddComponent<LineFly>();
                 prefabType = LineFly;
                 break;
             case BaseFly.FlyType.Circle:
-                fly = new GameObject("CircleFly").AddComponent<CircleFly>();;
                 prefabType = CircleFly;
                 break;
             case BaseFly.FlyType.Random:
-                fly = new GameObject("RandomFly").AddComponent<RandomFly>();;
                 prefabType = RandomFly;
                 break;
             default:
                 Debug.LogError("Invalid Fly Type: " + type);
-                prefabType = null;
-                fly = new LineFly();
-                return fly;
+                prefabType = LineFly;
+                break;
         }
 
         Vector3 summonPosition = generatePosition();
         Quaternion summonRotation = transform.rotation;
-
-        GameObject summonedPrefab = Instantiate(prefabType, summonPosition, summonRotation);
-
+        Debug.Log("Prefab: " + prefabType);
+        GameObject fly = Instantiate(prefabType, summonPosition, summonRotation);
 
         return fly;
     }
@@ -125,38 +123,27 @@ public class FlyFactory : MonoBehaviour
         return new Vector3(xPos,yPos,0);
     }
 
-    public void destroyFly(BaseFly fly, BaseFly.FlyType type) {
-        switch (type){
-            case BaseFly.FlyType.Line:
-                LineFly lFly = (LineFly) fly;
-                if (lineFlyList.Contains(lFly)) {
-                    lineFlyList.Remove(lFly);
-                } else {
-                    Debug.LogError("Error deleting line fly, does not exist?");
-                }
-                break;
-            case BaseFly.FlyType.Circle:
-                CircleFly cFly = (CircleFly) fly;
-                if (circleFlyList.Contains(cFly)) {
-                    circleFlyList.Remove(cFly);
-                } else {
-                    Debug.LogError("Error deleting circle fly, does not exist?");
-                }
-                break;
-            case BaseFly.FlyType.Random:
-                RandomFly rFly = (RandomFly) fly;
-                Debug.Log(rFly);
-                Debug.Log(randomFlyList);
-                if (randomFlyList.Contains(rFly)) {
-                    randomFlyList.Remove(rFly);
-                } else {
-                    Debug.LogError("Error deleting random fly, does not exist?");
-                }
-                break;
-            default:
-                 Debug.LogError("Error deleting fly. Invalid type" + type);
-                 break;
+    public void destroyFly(GameObject fly) {
+        // if (flyList.Contains(fly)) {
+        //     flyList.Remove(fly);
+        //     Destroy(fly);
+        // } else {
+        //     Debug.LogError("Error deleting fly, does not exist?");
+        // }
+
+        if (fly.GetComponent<LineFly>() != null) {
+            lineFlyCount -= 1;
+            Debug.Log("Line Fly removed");
         }
+        if (fly.GetComponent<CircleFly>() != null) {
+            circleFlyCount -= 1;
+            Debug.Log("Circle Fly removed");
+        }
+        if (fly.GetComponent<RandomFly>() != null) {
+            randomFlyCount -= 1;
+            Debug.Log("random Fly removed");
+        }
+        Destroy(fly);
     }
 
 }
