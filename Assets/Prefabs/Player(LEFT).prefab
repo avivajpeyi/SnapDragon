@@ -324,6 +324,7 @@ GameObject:
   - component: {fileID: 7720787730406663537}
   - component: {fileID: 7720787730406663536}
   - component: {fileID: 7720787730406663551}
+  - component: {fileID: 7497381308162809240}
   m_Layer: 0
   m_Name: PlantHead
   m_TagString: Plant
@@ -436,6 +437,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7497381308162809240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720787730406663549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26263ec28c954c4990e1b870cb4fcc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7720787730850992643
 GameObject:
   m_ObjectHideFlags: 0

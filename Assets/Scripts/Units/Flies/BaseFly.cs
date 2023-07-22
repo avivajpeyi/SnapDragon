@@ -25,7 +25,7 @@ public abstract class BaseFly : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        SetInitialReferences();        
+        SetInitialReferences();
     }
 
     public abstract void SetInitialReferences();
@@ -35,7 +35,7 @@ public abstract class BaseFly : MonoBehaviour
     {
         float x1 = transform.position.x;
         if (canMove) Move();
-        
+
         if (x1 > transform.position.x)
         {
             this.gameObject.GetComponentInChildren<SpriteRenderer>(false).flipX = false;
@@ -77,14 +77,12 @@ public abstract class BaseFly : MonoBehaviour
 
                 Instantiate(deathParticles, transform.position, Quaternion.identity);
 
-                // HERE WE CAN ALSO ADD LOGIC OF FLY-VALUE MULTIPLIER   
+                // HERE WE CAN ALSO ADD LOGIC OF FLY-VALUE MULTIPLIER
 
                 if (type == FlyType.Winning)
                 {
                     GameManager.Instance.ChangeState(GameState.GameOver);
                 }
-
-                Debug.Log(this.gameObject);
                 FlyFactory.Instance.destroyFly(this.gameObject);
                 // Destroy(this.gameObject);
             }

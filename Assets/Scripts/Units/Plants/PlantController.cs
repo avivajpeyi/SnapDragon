@@ -217,4 +217,13 @@ public class PlantController : MonoBehaviour
         maxDist = _minDist;
         ResetPosition();
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        Debug.Log(other);
+         if (other.gameObject.CompareTag("Plant"))
+        {
+            Debug.Log("Snap!");
+            
+        }
+    }
 }
