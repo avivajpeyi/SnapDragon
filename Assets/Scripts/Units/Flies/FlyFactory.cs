@@ -38,7 +38,7 @@ public class FlyFactory : Singleton<FlyFactory>
     {
         foreach (var flyDat in FlyDataList)
         {
-            if (Random.value < flyDat.spawnProb)
+            if (Random.value < (1- flyDat.count/flyDat.spawnMax))
             {
                 flyDat.count++;
                 CreateFly(flyDat.prefab);
@@ -48,8 +48,6 @@ public class FlyFactory : Singleton<FlyFactory>
 
     public GameObject CreateFly(GameObject flyPrefab)
     {
-        Debug.Log("Prefab: " + flyPrefab);
-        Debug.Log("PrefabName" + flyPrefab.name);
         GameObject instantiatedFly = Instantiate(
             flyPrefab,
             generatePosition(),

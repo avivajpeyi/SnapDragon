@@ -23,7 +23,6 @@ public abstract class BaseFly : MonoBehaviour
         float x1 = transform.position.x;
         if (canMove) Move();
         if (flyType != BaseFly.FlyType.Circle) {return;}
-        Debug.Log(this.gameObject.GetComponentInChildren<SpriteRenderer>(false).sprite);
         if (x1 > transform.position.x) {
             this.gameObject.GetComponentInChildren<SpriteRenderer>(false).flipX = false;
         } else if (transform.position.x > x1) {
