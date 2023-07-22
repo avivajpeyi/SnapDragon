@@ -63,6 +63,10 @@ public class PlantController : MonoBehaviour
     LineRenderer neck;
     public Transform plantHead;
 
+    bool growKeyDown = false;
+    bool leftKeyDown = false;
+    bool rightKeyDown = false;
+
 
     private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
 
@@ -112,14 +116,29 @@ public class PlantController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        Debug.Log("grow()" + context);
-        if (context.ReadValue<Vector2>().magnitude > 0)
+        // Grow while up pressed
+        if (context.ReadValue<Vector2>().y > 0)
         {
-            Grow();
+            growKeyDown = true;
         }
         else 
         {
-            ResetPosition();
+            growKeyDown = false;
+        }
+
+        // rotate
+        if (context.ReadValue<Vector2>().x > 0)
+        {
+            leftKeyDown = true;
+        } 
+        else if (context.ReadValue<Vector2>().x < 0)
+        {
+            rightKeyDown = true;
+        }
+        else
+        {
+            leftKeyDown = false;
+            rightKeyDown = false;
         }
     }
 
@@ -129,6 +148,7 @@ public class PlantController : MonoBehaviour
         
         // if the player presses the space bar, grow the plant
         if (Input.GetKey(myKeys.jumpKey))
+        // if (growKeyDown)
         {
             Grow();
         }
