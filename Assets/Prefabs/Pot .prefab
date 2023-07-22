@@ -125,18 +125,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: fb5eddfb-e7e6-4958-9968-d69e5e818666
-    m_ActionName: Gameplay/Movement[/Keyboard/i,/Keyboard/k,/Keyboard/j,/Keyboard/l,/Keyboard/t,/Keyboard/g,/Keyboard/f,/Keyboard/h,/DualShock4GamepadHID/buttonSouth,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4dea063b-adb6-4c80-989a-22ea296c22e6
-    m_ActionName: Gameplay/Reset[/Keyboard/r]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a55f2c21-cd5f-47ad-b370-5e96259a6e57
-    m_ActionName: Gameplay/Exit[/Keyboard/escape]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+    m_ActionId: 4eb2749c-50ff-4824-9f3b-2d797acdf691
+    m_ActionName: Controller/Move[/XInputControllerWindows/buttonSouth,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/right]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Controller
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
