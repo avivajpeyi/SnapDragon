@@ -5,13 +5,7 @@ using UnityEngine;
 public class GoldenFly : BaseFly
 {
 
-    public GoldenFly(){
-        flyType = BaseFly.FlyType.Winning;
-    }
-
-    void Start() {
-        GoldenFlyInit();
-    }
+    
 
     public float moveSpeed = 3f;
     public float direction;
@@ -22,7 +16,9 @@ public class GoldenFly : BaseFly
     private float timeElapsed;
     private Vector3 startingPosition;
 
-    private void GoldenFlyInit() {
+    public override void SetInitialReferences()
+    {
+        type = BaseFly.FlyType.Winning;
         startingPosition = transform.position;
         timeElapsed = 0;
         if (Random.value > 0.5) {
