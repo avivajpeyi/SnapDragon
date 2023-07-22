@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 166279d8c79af438bbc03cfad1177177
+guid: cf8561d26a9168f478fa0c026e4d0074
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,59 +101,131 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fly_orange_0
+      name: golden_fly_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 534
-        width: 764
-        height: 534
-      alignment: 9
-      pivot: {x: 0.35, y: 0.35}
-      border: {x: 0, y: 11, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f226d502749c19a4183f7b4defde9ac4
-      internalID: 646864303
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fly_orange_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 764
-        height: 545
-      alignment: 9
-      pivot: {x: 0.35, y: 0.33}
+        x: 3
+        y: 41
+        width: 234
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff945073241594341a1a214f44fcdf3a
-      internalID: -1751135000
+      spriteID: 54366d172639e18409e84e09b4d63286
+      internalID: -610769184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden_fly_1
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 38
+        width: 234
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5daa1540b0d0e4bba9b44f76e1a299
+      internalID: -560757141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden_fly_2
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 41
+        width: 234
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6854d9b4084525d4a9be7d4747ada0bb
+      internalID: -1016358904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden_fly_3
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 38
+        width: 234
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3c332840365de8439bf1b2a0ba761e4
+      internalID: -631288224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden_fly_4
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 38
+        width: 234
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14047524d57f701459770ffbd65967a2
+      internalID: -375747604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden_fly_5
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 38
+        width: 234
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdb5195ca54bf0942b7dc6626f30f676
+      internalID: -297066198
       vertices: []
       indices: 
       edges: []
@@ -169,8 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fly_orange_0: 646864303
-      fly_orange_1: -1751135000
+      golden_fly_0: -610769184
+      golden_fly_1: -560757141
+      golden_fly_2: -1016358904
+      golden_fly_3: -631288224
+      golden_fly_4: -375747604
+      golden_fly_5: -297066198
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
