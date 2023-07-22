@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4279100541959645506}
   - component: {fileID: 4279100541959645507}
   m_Layer: 0
-  m_Name: dragon_head_sprite
+  m_Name: dragon_head_sprite_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

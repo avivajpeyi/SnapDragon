@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa67dd737955a45d2927ff54ae0df23d, type: 3}
+  m_Name: CircleFly
+  m_EditorClassIdentifier: 
+  type: 1
+  spawnFrequency: 5
+  spawnProb: 0.5
+  count: 3
+  spawnMax: 10
+  prefab: {fileID: 5169531864941804322, guid: fa4afae9f56632d4b95f423d58e8abf0, type: 3}
