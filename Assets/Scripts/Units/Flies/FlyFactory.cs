@@ -48,8 +48,6 @@ public class FlyFactory : Singleton<FlyFactory>
 
     public GameObject CreateFly(GameObject flyPrefab)
     {
-        Debug.Log("Prefab: " + flyPrefab);
-        Debug.Log("PrefabName" + flyPrefab.name);
         GameObject instantiatedFly = Instantiate(
             flyPrefab,
             generatePosition(),

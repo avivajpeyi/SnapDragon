@@ -22,7 +22,6 @@ public abstract class BaseFly : MonoBehaviour
     void Update() {
         float x1 = transform.position.x;
         if (canMove) Move();
-        Debug.Log(this.gameObject.GetComponentInChildren<SpriteRenderer>(false).sprite);
         if (x1 > transform.position.x) {
             this.gameObject.GetComponentInChildren<SpriteRenderer>(false).flipX = false;
         } else if (transform.position.x > x1) {
@@ -65,7 +64,6 @@ public abstract class BaseFly : MonoBehaviour
                 {
                     GameManager.Instance.ChangeState(GameState.GameOver);
                 }
-                Debug.Log(this.gameObject);
                 FlyFactory.Instance.destroyFly(this.gameObject);
                 // Destroy(this.gameObject);
             }
