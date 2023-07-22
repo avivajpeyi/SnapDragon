@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4847128828130582460
+--- !u!1 &8581300988130822321
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4847128828130582337}
-  - component: {fileID: 4847128828130582462}
-  - component: {fileID: 4847128828130582339}
-  - component: {fileID: 136961734112534340}
+  - component: {fileID: 8581300988130822324}
+  - component: {fileID: 8581300988130822327}
+  - component: {fileID: 8581300988130822326}
   m_Layer: 0
-  m_Name: LineFly
-  m_TagString: Fly
+  m_Name: FlySpawner
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4847128828130582337
+--- !u!4 &8581300988130822324
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4847128828130582460}
+  m_GameObject: {fileID: 8581300988130822321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.44, y: -2.2, z: 0}
+  m_LocalPosition: {x: 0.09, y: 1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4847128828130582462
+--- !u!212 &8581300988130822327
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4847128828130582460}
+  m_GameObject: {fileID: 8581300988130822321}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,36 +85,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4847128828130582339
+--- !u!114 &8581300988130822326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4847128828130582460}
+  m_GameObject: {fileID: 8581300988130822321}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
+  m_Script: {fileID: 11500000, guid: ed4e36bec7c983a469cbb9bd2af49b1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyValue: 1
-  flyType: 0
-  canMove: 1
-  moveSpeed: 2
-  movementAngle: 0
---- !u!58 &136961734112534340
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4847128828130582460}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  sceneWidth: 0
+  sceneHeight: 0
+  LineFly: {fileID: 4847128828130582460, guid: 6df97a182433dfc49823902f4a4c9bc5, type: 3}
+  CircleFly: {fileID: 5169531864941804322, guid: fa4afae9f56632d4b95f423d58e8abf0, type: 3}
+  RandomFly: {fileID: 7937357837296778720, guid: b1ad82030d8ac4843981cbe9e0433dbb, type: 3}
+  framesPerSpawn: 0
+  lineFlySpawnFrequency: 0
+  lineFlySpawnMean: 0
+  lineFlySpawnMax: 0
+  circleFlySpawnFrequency: 0
+  circleFlySpawnMean: 0
+  circleFlySpawnMax: 0
+  randomFlySpawnFrequency: 0
+  randomFlySpawnMean: 0
+  randomFlySpawnMax: 0

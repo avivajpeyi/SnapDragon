@@ -10,7 +10,6 @@ public class CircleFly : BaseFly
     }
 
     void Start() {
-        base.BaseFlyInit();
         CircleFlyInit();
     }
 

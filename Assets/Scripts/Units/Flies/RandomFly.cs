@@ -10,7 +10,6 @@ public class RandomFly : BaseFly
     }
 
     void Start() {
-        base.BaseFlyInit();
         RandomFlyInit();
     }
 

@@ -6,21 +6,8 @@ using UnityEngine;
 
 public abstract class BaseFly : MonoBehaviour
 {
-    public float sceneWidth;
-    public Sprite flySprite;
     public float flyValue;
     public FlyType flyType;
-
-    public BaseFly() { 
-    }
-
-    void Start() {
-        BaseFlyInit();
-    }
-
-    protected void BaseFlyInit() {
-        sceneWidth = Camera.main.orthographicSize * 2f * Camera.main.aspect;
-    }
 
     public bool canMove = true;
     
@@ -30,9 +17,8 @@ public abstract class BaseFly : MonoBehaviour
     
     private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
 
-     private void OnDestroy() => GameManager.OnBeforeStateChanged -= OnStateChanged;
+    private void OnDestroy() => GameManager.OnBeforeStateChanged -= OnStateChanged;
 
-    
     void Update() {
         if (canMove) Move();
     }
@@ -67,19 +53,38 @@ public abstract class BaseFly : MonoBehaviour
                 
                 Instantiate(flyDeathParticles, transform.position, Quaternion.identity);
                 
-                // HERE WE CAN ALSO ADD LOGIC OF FLY-VALUE MULTIPLIER
+                // HERE WE CAN ALSO ADD LOGIC OF FLY-VALUE MULTIPLIER   
                 
                 if (flyType == FlyType.Winning)
                 {
                     GameManager.Instance.ChangeState(GameState.GameOver);
                 }
-
-                
-                
+                FlyFactory father = FlyFactory.Instance;
+                father.destroyFly(this, this.flyType);
                 Destroy(this.gameObject);
             }
 
             
+        }
+    }
+
+    // protected void OnCollisionEnter2D(Collision2D other) {
+    //     Debug.Log(ToString() + "has hit something");
+    //     if (other.gameObject.CompareTag("GameBoundary")){
+    //         Debug.Log(ToString() + "has hit the game boundary");
+    //     }
+    // }
+
+    public override string ToString() {
+        switch (flyType) {
+            case FlyType.Line: 
+                return "Line Fly";
+            case FlyType.Circle: 
+                return "Circle Fly";
+            case FlyType.Random: 
+                return "Random Fly";
+            default:
+                return "Invalid Dly";
         }
     }
 

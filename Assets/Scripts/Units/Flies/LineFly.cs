@@ -10,7 +10,6 @@ public class LineFly : BaseFly
     }
 
     void Start() {
-        base.BaseFlyInit();
         LineFlyInit();
     }
 
