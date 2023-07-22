@@ -99,13 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 0
-  flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 2
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &8854427540240320700
 CircleCollider2D:
@@ -144,11 +141,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 732608428195436659, guid: 4cd7966cd9ecd47ad9d4f80571e18448, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.228
       objectReference: {fileID: 0}
     - target: {fileID: 732608428195436659, guid: 4cd7966cd9ecd47ad9d4f80571e18448, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.65
       objectReference: {fileID: 0}
     - target: {fileID: 732608428195436659, guid: 4cd7966cd9ecd47ad9d4f80571e18448, type: 3}
       propertyPath: m_LocalPosition.z
