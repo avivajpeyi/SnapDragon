@@ -112,7 +112,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2441773434390272692}
+        m_TargetAssemblyTypeName: PlantController, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fb5eddfb-e7e6-4958-9968-d69e5e818666
     m_ActionName: Gameplay/Movement[/Keyboard/i,/Keyboard/k,/Keyboard/j,/Keyboard/l,/Keyboard/t,/Keyboard/g,/Keyboard/f,/Keyboard/h,/DualShock4GamepadHID/buttonSouth,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right]
   - m_PersistentCalls:
