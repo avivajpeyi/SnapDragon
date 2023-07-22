@@ -25,7 +25,7 @@ public class PlantHead : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Fly"))
         {
-            plantController.OnFlyEaten();
+            plantController.OnFlyEaten(other.gameObject.GetComponent<BaseFly>().flyValue);
             AudioSource.PlayClipAtPoint(flyEatenFX, transform.position);
             Instantiate(flyEatenParticles, transform.position, Quaternion.identity);
 
