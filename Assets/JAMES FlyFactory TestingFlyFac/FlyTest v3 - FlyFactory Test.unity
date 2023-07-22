@@ -384,30 +384,41 @@ MonoBehaviour:
 
     To Do:
 
-    [] Test/Run FlyFactoryTest without compile
-    probs?
+    [x] Test/Run FlyFactoryTest without
+    compile probs?
 
-    [] Add a HelloWorld to FlyFactoryTest
+    [x] Add a HelloWorld to FlyFactoryTest
 
-    [] Add a For Loop to print
-    "FlySpawned" for every fly spawned (using some kinda serializefield int value)
+    [] Add a For
+    Loop to print "FlySpawned" for every fly spawned (using some kinda serializefield
+    int value)
+
+    [] Spawn 1 Fly
+
+    [x] SerializeField add flies (already coded)
 
     []
-    Spawn 1 Fly
+    BASIC FLY SELECTION (kinda done? just make the flies spawn random from selection?)
 
-    [] Fly Selection (what flies should spawn in this group?) SeraializeField
-    List Prefab  (or 2 GameObject Prefabs
+    []
+    Fly Selection (what flies should spawn in this group?) USESOME MKINDA LIST INSTEAD
+    OF MANUAL? SeraializeField List Prefab  (or 2 GameObject Prefabs
 
-    [] Gizmo Box for Fly Area to Spawn?
-    (maybe steal the Gizmo from WireframeFPS Project)
+    [] Gizmo
+    Box for Fly Area to Spawn? (maybe steal the Gizmo from WireframeFPS Project)
 
-    [] ConsoleLog the dimensions
-    of said Gizmo Box
+    []
+    ConsoleLog the dimensions of said Gizmo Box
 
-    [] Spawn a Fly in the Gizmo Box (try lotsa times or make
-    for loop i dunno)
+    [] Spawn a Fly in the Gizmo
+    Box (try lotsa times or make for loop i dunno)
 
-    [] Commit Changes to Main'
+    [] Commit Changes to Main
+
+    Units
+    for Spawn Frequency?
+
+'
 --- !u!222 &215097499
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -598,3 +609,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c96c967d2bd84a28814e16f1c3bf299, type: 3}
+--- !u!1001 &6900997549644623065
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 345831251709464322, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+    - target: {fileID: 4141640146025067886, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_Name
+      value: FlyFactory
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.3708377
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.0719326
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.54922
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6494
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672001388457330175, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 115872910f24f23448af5f74e9e80dcf, type: 3}

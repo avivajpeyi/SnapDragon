@@ -1,110 +1,69 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-
-public class FlyFactory : Singleton<FlyFactory>
+public class FlyFactory : MonoBehaviour
 {
-    public int framesPerSpawn;
-    public List<FlyData> FlyDataList = new List<FlyData>();
+    public GameObject LineFly;
+    public GameObject CircleFly;
+    public GameObject RandomFly;
 
+    public float lineFlySpawnFrequency = 100000000; //Need Units
+    public float circleFlySpawnFrequency = 20000000;
+    public float randomFlySpawnFrequency = 10000000;
 
-    private int frameCount;
-    [SerializeField]
-    private Bounds bounds;
+    private int timeTrack = 0;
 
+    void Update() {
+        Debug.Log("HEY");
+        
+        timeTrack++;
 
-    void Start()
-    {
-        // if bounds are all zero, warn the user
-        if (bounds.size == Vector3.zero)
-        {
-            Debug.LogError("FlyFactory has no bounds (set in the inspector)");
+        if (timeTrack % randomFlySpawnFrequency == 0) {
+            CreateFly(BaseFly.FlyType.Line);
         }
-        framesPerSpawn = 540;
-        frameCount = 0;
-
-        foreach (var flyDat in FlyDataList)
-        {
-            flyDat.count = 0;
+        if (timeTrack % circleFlySpawnFrequency == 0) {
+            CreateFly(BaseFly.FlyType.Circle);
+        }
+        if (timeTrack % lineFlySpawnFrequency == 0) {
+            CreateFly(BaseFly.FlyType.Random);
         }
         
-        for (int i = 0; i < 3; i++)
-            Spawn();
     }
 
+    public BaseFly CreateFly(BaseFly.FlyType type) {
+        BaseFly fly = null;
+        GameObject prefabType;
 
-    void Update()
-    {
-        frameCount++;
-        if (frameCount >= framesPerSpawn)
+        switch (type)
         {
-            Spawn();
-            frameCount = 0;
-        }
-    }
-
-    void Spawn()
-    {
-        foreach (var flyDat in FlyDataList)
-        {
-            if (Random.value < (1 - flyDat.count / flyDat.spawnMax))
-            {
-                flyDat.count++;
-                CreateFly(flyDat.prefab);
-            }
-        }
-    }
-
-    public GameObject CreateFly(GameObject flyPrefab)
-    {
-        GameObject instantiatedFly = Instantiate(
-            flyPrefab,
-            RandomPointInBounds(),
-            transform.rotation
-        );
-        return instantiatedFly;
-    }
-
-
-
-
-    private Vector3 RandomPointInBounds()
-    {
-        return new Vector3(
-            Random.Range(bounds.min.x, bounds.max.x),
-            Random.Range(bounds.min.y, bounds.max.y),
-            0
-        );
-    }
-
-
-    public void destroyFly(GameObject flyG0)
-    {
-        BaseFly fly = flyG0.GetComponent<BaseFly>();
-
-        if (fly != null)
-        {
-            foreach (var flyData in FlyDataList)
-            {
-                if (flyData.type == fly.type)
-                {
-                    flyData.count -= 1;
-                    Debug.Log("Fly removed");
-                }
-            }
+            case BaseFly.FlyType.Line:
+                fly = new LineFly();
+                prefabType = LineFly;
+                break;
+            case BaseFly.FlyType.Circle:
+                fly = new CircleFly();
+                prefabType = CircleFly;
+                break;
+            case BaseFly.FlyType.Random:
+                fly = new RandomFly();
+                prefabType = RandomFly;
+                break;
+            default:
+                Debug.LogError("Invalid Fly Type: " + type);
+                prefabType = null;
+                fly = new LineFly();
+                return fly;
         }
 
-        Destroy(fly.transform.root.gameObject);
+        Vector3 summonPosition = transform.position;
+        Quaternion summonRotation = transform.rotation;
+
+        GameObject summonedPrefab = Instantiate(prefabType, summonPosition, summonRotation);
+
+
+        return fly;
     }
 
 
-    private void OnDrawGizmos()
-    {
-        // Shade in bounds area
-        Gizmos.color = new Color(1, 0, 0, 0.5f);
-        Gizmos.DrawCube(bounds.center, bounds.size);
-    }
 }
