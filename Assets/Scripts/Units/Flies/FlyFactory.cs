@@ -19,17 +19,6 @@ public class FlyFactory : Singleton<FlyFactory>
         CalculateScreneSize();
         framesPerSpawn = 540;
         frameCount = 0;
-        // lineFlySpawnFrequency = 1;
-        // lineFlySpawnMax = 10;
-        // circleFlySpawnFrequency = 2;
-        // circleFlySpawnMax = 6;
-        // randomFlySpawnFrequency = 3;
-        // randomFlySpawnMax = 4;
-        // lineFlyCount = 0;
-        // circleFlyCount = 0;
-        // randomFlyCount = 0;
-
-        // init spawn a few
         for (int i = 0; i < 3; i++)
             Spawn();
     }
@@ -107,6 +96,6 @@ public class FlyFactory : Singleton<FlyFactory>
             }
         }
 
-        Destroy(fly);
+        Destroy(fly.transform.root.gameObject);
     }
 }
