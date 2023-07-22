@@ -14,16 +14,28 @@ public class RandomFly : BaseFly
         RandomFlyInit();
     }
 
-    public float moveSpeed = 2f;
-    public bool isClockwise;
-    public float eccentricity;
+    public float moveMin = 0.5f;
+    public float moveMax = 10f;
+    public float moveSpeed;
+    public float directChangeThresh;
+    public float movementAngle;
 
     private void RandomFlyInit() {
-        // Movement logic init
-        flyValue = 3;
+        updateMovement();
+        flyValue = 3f;
+        directChangeThresh = 0.97f;
     }
 
     public override void Move() {
-        // Movement logic
+        if (Random.value >= directChangeThresh) {
+            updateMovement();
+        }
+       
+        transform.position += new Vector3(Mathf.Sin(movementAngle), Mathf.Cos(movementAngle), 0) * moveSpeed * Time.deltaTime;
+    }
+
+    private void updateMovement() {
+        movementAngle = Random.value * 2f * Mathf.PI;
+        moveSpeed = Random.value * (moveMax - moveMin) + moveMin;
     }
 }
