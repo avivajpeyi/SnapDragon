@@ -47,13 +47,17 @@ public class PlantController : MonoBehaviour
     private float RotateSpeed = 100f;
 
     // [SerializeField]
-    private float growthSpeedMax = 10f;
+    private float growthSpeedMax = 100f;
     
     // [SerializeField]
     private float growthSpeedMin = 0.05f;
 
     // [SerializeField]
-    private float growthAcceleration = 5f;
+    private float growthAcceleration = 0.01f;
+    
+    
+    private float distanceForFullScreen = 25f;
+    
 
 
     private float _curSpeed;
@@ -203,7 +207,11 @@ public class PlantController : MonoBehaviour
         _countFliesEaten++;
         ResetPosition();
         maxDist += maxDistIncrease;
-        // growthSpeedMax -= growthAcceleration*.1f;
+        if (_curDist > distanceForFullScreen)
+        {
+            CameraManager.Instance.PrioritizeFull();
+        }
+        growthSpeedMax -= growthAcceleration*.1f;
     }
 
 

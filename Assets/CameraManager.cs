@@ -8,6 +8,7 @@ public class CameraManager : Singleton<CameraManager>
 {
     [SerializeField] private CinemachineVirtualCamera vcam_follow;
     [SerializeField] private CinemachineVirtualCamera vcam_goal;
+    [SerializeField] private CinemachineVirtualCamera vcam_full;
 
 
     private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
@@ -36,6 +37,7 @@ public class CameraManager : Singleton<CameraManager>
     {
         vcam_goal.Priority = 10;
         vcam_follow.Priority = 0;
+        vcam_full.Priority = 0;
         Debug.Log("Camera switch to PrioritizeGoal");
     }
 
@@ -43,9 +45,17 @@ public class CameraManager : Singleton<CameraManager>
     {
         vcam_goal.Priority = 0;
         vcam_follow.Priority = 10;
+        vcam_full.Priority = 0;
         Debug.Log("Camera switch to PrioritizeFollow");
     }
 
+    public void PrioritizeFull()
+    {
+        vcam_goal.Priority = 0;
+        vcam_follow.Priority = 0;
+        vcam_full.Priority = 10;
+        Debug.Log("Camera switch to PrioritizeFull");
+    }
 
     private void Start()
     {
@@ -56,6 +66,10 @@ public class CameraManager : Singleton<CameraManager>
         if (vcam_follow == null)
         {
             Debug.LogError("vcam_follow is null");
+        }
+        if (vcam_full == null)
+        {
+            Debug.LogError("vcam_full is null");
         }
         PrioritizeGoal();
     }
