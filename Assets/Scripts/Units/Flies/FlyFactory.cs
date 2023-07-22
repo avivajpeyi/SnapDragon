@@ -101,7 +101,6 @@ public class FlyFactory : MonoBehaviour
 
         Vector3 summonPosition = generatePosition();
         Quaternion summonRotation = transform.rotation;
-        Debug.Log("Prefab: " + prefabType);
         GameObject fly = Instantiate(prefabType, summonPosition, summonRotation);
 
         return fly;
