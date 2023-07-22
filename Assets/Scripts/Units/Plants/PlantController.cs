@@ -159,11 +159,11 @@ public class PlantController : MonoBehaviour
         if (Input.GetKey(myKeys.jumpKey)) Grow();
         else
         {
-            if (leftKeyDown &&
+            if ((leftKeyDown || Input.GetKey(myKeys.leftKey)) &&
             // if (Input.GetKey(myKeys.leftKey) && 
             ((transform.rotation.eulerAngles.z < 180 || transform.rotation.eulerAngles.z > 270))){
                 transform.Rotate(Vector3.forward * -RotateSpeed * Time.deltaTime);}
-            else if (rightKeyDown &&
+            else if ((rightKeyDown || Input.GetKey(myKeys.rightKey)) &&
             // else if (Input.GetKey(myKeys.rightKey) && 
             ((transform.rotation.eulerAngles.z > 180 || transform.rotation.eulerAngles.z < 90)))
                 transform.Rotate(Vector3.forward * RotateSpeed * Time.deltaTime);
