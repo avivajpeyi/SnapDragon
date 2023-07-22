@@ -25,7 +25,7 @@ public class CircleFly : BaseFly
 
     private void CircleFlyInit() {
         startingPosition = transform.position;
-        timeElapsed = 0;
+        timeElapsed = Random.value * 2f * Mathf.PI;
         if (Random.value > 0.5) {
             direction = 1f;
         } else {
