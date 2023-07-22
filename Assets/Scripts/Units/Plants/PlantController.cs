@@ -50,6 +50,10 @@ public class PlantController : MonoBehaviour
     LineRenderer neck;
     public Transform plantHead;
 
+    bool growKeyDown = false;
+    bool leftKeyDown = false;
+    bool rightKeyDown = false;
+
 
     private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
 
@@ -94,14 +98,29 @@ public class PlantController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        Debug.Log("grow()" + context);
-        if (context.ReadValue<Vector2>().magnitude > 0)
+        // Grow while up pressed
+        if (context.ReadValue<Vector2>().y > 0)
         {
-            Grow();
+            growKeyDown = true;
         }
         else 
         {
-            ResetPosition();
+            growKeyDown = false;
+        }
+
+        // rotate
+        if (context.ReadValue<Vector2>().x > 0)
+        {
+            leftKeyDown = true;
+        } 
+        else if (context.ReadValue<Vector2>().x < 0)
+        {
+            rightKeyDown = true;
+        }
+        else
+        {
+            leftKeyDown = false;
+            rightKeyDown = false;
         }
     }
 
@@ -109,6 +128,7 @@ public class PlantController : MonoBehaviour
     {
         // if the player presses the space bar, grow the plant
         if (Input.GetKey(myKeys.jumpKey))
+        // if (growKeyDown)
         {
             Grow();
         }
@@ -121,8 +141,10 @@ public class PlantController : MonoBehaviour
         // TODO: prevent going below screen
         // if the player presses the left or right arrow keys, rotate the plant around the z axis
         if (Input.GetKey(myKeys.leftKey))
+        // if (leftKeyDown)
             transform.Rotate(Vector3.forward * -RotateSpeed * Time.deltaTime);
         else if (Input.GetKey(myKeys.rightKey))
+        // if (rightKeyDown)
             transform.Rotate(Vector3.forward * RotateSpeed * Time.deltaTime);
 
         neck.SetPosition(0, this.transform.position);

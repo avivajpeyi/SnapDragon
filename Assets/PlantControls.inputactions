@@ -35,7 +35,7 @@
             ],
             "bindings": [
                 {
-                    "name": "WASD",
+                    "name": "RightPlayer",
                     "id": "afea5405-6950-4ecf-a4f4-6bba08c97f2f",
                     "path": "2DVector",
                     "interactions": "",
@@ -48,10 +48,10 @@
                 {
                     "name": "up",
                     "id": "4fe06657-571b-4098-a81f-1c30b393bddf",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Player2",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -59,10 +59,10 @@
                 {
                     "name": "down",
                     "id": "1d3d215a-1687-42db-bb0f-d8282fb8ecb7",
-                    "path": "",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Player2",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -70,10 +70,10 @@
                 {
                     "name": "left",
                     "id": "7aff13ff-efbe-41a5-819d-163a1db011ae",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Player2",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -81,16 +81,16 @@
                 {
                     "name": "right",
                     "id": "777e4d97-0eef-4138-b402-f812ae96e196",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Player2",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "ARROWS",
+                    "name": "LeftPlayer",
                     "id": "d8bc4688-f621-40cc-939a-d928d0c85cbc",
                     "path": "2DVector",
                     "interactions": "",
@@ -103,10 +103,10 @@
                 {
                     "name": "up",
                     "id": "b24bbc81-a1c8-4721-b370-b22ba3566842",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/t",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Player1",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -114,10 +114,10 @@
                 {
                     "name": "down",
                     "id": "be496ee9-d2c0-459a-baca-7835d37e67cc",
-                    "path": "",
+                    "path": "<Keyboard>/g",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Player1",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -125,10 +125,10 @@
                 {
                     "name": "left",
                     "id": "45d4308e-31e2-4591-b549-bd38e3302ee7",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Player1",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -136,10 +136,10 @@
                 {
                     "name": "right",
                     "id": "6ae0b6fc-94c7-4964-9fe3-c45c6c2aee18",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/h",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Player1",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
