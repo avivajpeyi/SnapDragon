@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class RandomFly : BaseFly
 {
+    
+    float minTimeBetweenKicks = 0.5f;
+    float maxTimeBetweenKicks = 3f;
+    
     float moveForceMin = 0.5f;
-    float moveForceMax = 10f;
+    float moveForceMax = 7f;
     public float moveForce;
-    float directChangeThresh;
     float movementAngle;
+    bool canGetKicked = true;
 
     public RandomFly()
     {
@@ -18,17 +22,28 @@ public class RandomFly : BaseFly
     public override void SetInitialReferences()
     {
         flyValue = 3f;
-        // Random flopat between 0.95 and 1
-        directChangeThresh = Random.Range(0.95f, 1f);
     }
 
 
+    
+    
+    
     public override void Move()
     {
-        if (Random.value >= directChangeThresh)
+        if (canGetKicked)
         {
             GetKicked();
+            canGetKicked = false;
+            // Call IENumearator 1-4 seconds before being able to get kicked again
+            StartCoroutine(ResetCanGetKicked(Random.Range(minTimeBetweenKicks, maxTimeBetweenKicks)));
+            
         }
+    }
+    
+    IEnumerator ResetCanGetKicked(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        canGetKicked = true;
     }
 
     void GetKicked()

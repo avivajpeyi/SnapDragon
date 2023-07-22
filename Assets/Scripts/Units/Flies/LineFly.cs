@@ -9,23 +9,28 @@ public class LineFly : BaseFly
 
     private Vector2 direction;
 
-    public LineFly()
-    {
-        type = BaseFly.FlyType.Line;
-    }
+    private bool beenKicked = false;
+
+    
 
     public override void SetInitialReferences()
     {
         movementAngle = Random.value * 2f * Mathf.PI;
         flyValue = 1;
         direction = new Vector2(Mathf.Sin(movementAngle), Mathf.Cos(movementAngle));
-        // Send the fly off in this direction (apply a force, no drag)
-        rb.AddForce(direction * moveSpeed, ForceMode2D.Impulse);
+        type = BaseFly.FlyType.Line;
     }
 
 
     public override void Move()
     {
+        // if vel is zero, apply force in direction
+        if (rb.velocity.magnitude < 0.1f)
+        {
+            rb.AddForce(direction * moveSpeed, ForceMode2D.Impulse);
+            beenKicked = true;
+        }
+        
         // rb.velocity = direction * moveSpeed;
     }
 }

@@ -12,10 +12,15 @@ public abstract class BaseFly : MonoBehaviour
 
     public bool canMove = true;
 
-    AudioClip soundFX;
-    GameObject deathParticles;
+    private FlyFactory myFactory;
+    protected AudioClip soundFX;
+    protected GameObject deathParticles;
 
     protected Rigidbody2D rb;
+    protected SpriteRenderer sr;
+
+    private float oldX;
+    private float currentX;
 
 
     private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
@@ -25,25 +30,41 @@ public abstract class BaseFly : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponentInChildren<SpriteRenderer>();
+        myFactory = GetComponentInParent<FlyFactory>();
+        soundFX = Resources.Load<AudioClip>("FlyEatenAudio");
+        deathParticles = Resources.Load<GameObject>("FlyEatenFx");
         SetInitialReferences();
     }
 
     public abstract void SetInitialReferences();
 
 
+    [SerializeField]
+    protected bool hasFlipped
+    {
+        get
+        {
+            if (type == FlyType.Winning || type == FlyType.Circle)
+            {
+                // These dont use physics so this idea works
+                return currentX > oldX;
+            }
+            else
+            {
+                // These use physics so we need to check velocity
+                return rb.velocity.x > 0;
+            }
+        }
+    }
+
+
     void Update()
     {
-        float x1 = transform.position.x;
+        currentX = transform.position.x;
         if (canMove) Move();
-
-        if (x1 > transform.position.x)
-        {
-            this.gameObject.GetComponentInChildren<SpriteRenderer>(false).flipX = false;
-        }
-        else if (transform.position.x > x1)
-        {
-            this.gameObject.GetComponentInChildren<SpriteRenderer>(false).flipX = true;
-        }
+        oldX = currentX;
+        sr.flipX = hasFlipped;
     }
 
 
@@ -56,45 +77,13 @@ public abstract class BaseFly : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D col)
+    public void OnEaten()
     {
-        if (col.gameObject.CompareTag("Plant"))
-        {
-            Debug.Log("Fly collided with " + col.gameObject.name);
-
-            PlantController plant = col.GetComponentInParent<PlantController>();
-            if (plant != null)
-            {
-                plant.OnFlyEaten();
-                // Play death sound and instantiate particles
-                soundFX = Resources.Load<AudioClip>("FlyEatenAudio");
-                deathParticles = Resources.Load<GameObject>("FlyEatenFx");
-
-                // The following will be needed in the scene when we have music
-                // AudioSystem.Instance.PlaySound(flyDeathSound);
-                // for now will just use a 'PlayOneShot' method
-                AudioSource.PlayClipAtPoint(soundFX, transform.position);
-
-                Instantiate(deathParticles, transform.position, Quaternion.identity);
-
-                // HERE WE CAN ALSO ADD LOGIC OF FLY-VALUE MULTIPLIER
-
-                if (type == FlyType.Winning)
-                {
-                    GameManager.Instance.ChangeState(GameState.GameOver);
-                }
-                FlyFactory.Instance.destroyFly(this.gameObject);
-                // Destroy(this.gameObject);
-            }
-        }
+        AudioSource.PlayClipAtPoint(soundFX, transform.position);
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
+        if (myFactory != null)
+            myFactory.destroyFly(this.gameObject);
     }
-
-    // protected void OnCollisionEnter2D(Collision2D other) {
-    //     Debug.Log(ToString() + "has hit something");
-    //     if (other.gameObject.CompareTag("GameBoundary")){
-    //         Debug.Log(ToString() + "has hit the game boundary");
-    //     }
-    // }
 
     public override string ToString()
     {
