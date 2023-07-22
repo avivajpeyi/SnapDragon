@@ -100,15 +100,16 @@ MonoBehaviour:
   sceneWidth: 0
   sceneHeight: 0
   LineFly: {fileID: 4847128828130582460, guid: 6df97a182433dfc49823902f4a4c9bc5, type: 3}
-  CircleFly: {fileID: 5169531864941804322, guid: fa4afae9f56632d4b95f423d58e8abf0, type: 3}
+  CircleFly: {fileID: 1444353070652354313, guid: 779536d84ed30d445b73bc3bed0108b4, type: 3}
   RandomFly: {fileID: 7937357837296778720, guid: b1ad82030d8ac4843981cbe9e0433dbb, type: 3}
   framesPerSpawn: 0
   lineFlySpawnFrequency: 0
-  lineFlySpawnMean: 0
+  lineFlyCount: 0
   lineFlySpawnMax: 0
   circleFlySpawnFrequency: 0
-  circleFlySpawnMean: 0
+  circleFlyCount: 0
   circleFlySpawnMax: 0
   randomFlySpawnFrequency: 0
-  randomFlySpawnMean: 0
+  randomFlyCount: 0
   randomFlySpawnMax: 0
+  flyList: []
