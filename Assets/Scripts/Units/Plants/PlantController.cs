@@ -71,7 +71,7 @@ public class PlantController : MonoBehaviour
     bool growKeyDown = false;
     bool leftKeyDown = false;
     bool rightKeyDown = false;
-
+    PlayerInput playerInput;
 
     private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
 
@@ -110,6 +110,9 @@ public class PlantController : MonoBehaviour
         {
             myKeys = player2Keys;
         }
+        
+        playerInput = gameObject.GetComponent<PlayerInput>();
+        playerInput.SwitchCurrentControlScheme("scheme1", Gamepad.all[((int)playerNum)]);
     }
 
     // Update is called once per frame
@@ -152,13 +155,16 @@ public class PlantController : MonoBehaviour
     void HandleInput()
     {
         // if the player presses the space bar, grow the plant
+        if (growKeyDown) Grow();
         if (Input.GetKey(myKeys.jumpKey)) Grow();
         else
         {
-            if (Input.GetKey(myKeys.leftKey) && 
+            if (leftKeyDown &&
+            // if (Input.GetKey(myKeys.leftKey) && 
             ((transform.rotation.eulerAngles.z < 180 || transform.rotation.eulerAngles.z > 270))){
                 transform.Rotate(Vector3.forward * -RotateSpeed * Time.deltaTime);}
-            else if (Input.GetKey(myKeys.rightKey) && 
+            else if (rightKeyDown &&
+            // else if (Input.GetKey(myKeys.rightKey) && 
             ((transform.rotation.eulerAngles.z > 180 || transform.rotation.eulerAngles.z < 90)))
                 transform.Rotate(Vector3.forward * RotateSpeed * Time.deltaTime);
 

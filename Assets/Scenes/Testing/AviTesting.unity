@@ -550,6 +550,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6ad69fafb5339c48b07f8f7ef03795f, type: 3}
+--- !u!1 &495252162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7720787730163698803, guid: 0c60ee5447a6743768499c944d680384, type: 3}
+  m_PrefabInstance: {fileID: 7720787730801644408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &495252163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7720787730163698806, guid: 0c60ee5447a6743768499c944d680384, type: 3}
+  m_PrefabInstance: {fileID: 7720787730801644408}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495252162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36fdc5789c7c347b3a50ad23a9a97105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &495252165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495252162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 435712ce8f89d4d0294c3d3a41bf537f, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 495252163}
+        m_TargetAssemblyTypeName: PlantController, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4eb2749c-50ff-4824-9f3b-2d797acdf691
+    m_ActionName: Gameplay/Move[/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth,/XInputControllerWindows/dpad/left,/XInputControllerWindows1/dpad/left,/XInputControllerWindows/dpad/right,/XInputControllerWindows1/dpad/right]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: scheme1
+  m_DefaultActionMap: Gameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &538495899
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,13 +715,75 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538495899}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.48581162, y: 3.61463, z: -41.757133}
+  m_LocalPosition: {x: 0.44371736, y: 3.6146, z: -41.757397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &558465230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3494432258139054053, guid: f1b8b0598d4cb453f992cb0d8a49e776, type: 3}
+  m_PrefabInstance: {fileID: 1268989936657698052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &558465232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558465230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 435712ce8f89d4d0294c3d3a41bf537f, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 558465234}
+        m_TargetAssemblyTypeName: PlantController, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4eb2749c-50ff-4824-9f3b-2d797acdf691
+    m_ActionName: Gameplay/Move[/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth,/XInputControllerWindows/dpad/left,/XInputControllerWindows1/dpad/left,/XInputControllerWindows/dpad/right,/XInputControllerWindows1/dpad/right]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: scheme1
+  m_DefaultActionMap: Gameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &558465234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3494432258139054055, guid: f1b8b0598d4cb453f992cb0d8a49e776, type: 3}
+  m_PrefabInstance: {fileID: 1268989936657698052}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558465230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36fdc5789c7c347b3a50ad23a9a97105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &596751394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,7 +1731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248852104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5466503, y: -0.5349996, z: -41.757133}
+  m_LocalPosition: {x: 0.5466503, y: -0.5349996, z: -41.757397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
