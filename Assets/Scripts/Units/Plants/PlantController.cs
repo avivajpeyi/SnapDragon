@@ -155,8 +155,7 @@ public class PlantController : MonoBehaviour
     void HandleInput()
     {
         // if the player presses the space bar, grow the plant
-        if (growKeyDown) Grow();
-        if (Input.GetKey(myKeys.jumpKey)) Grow();
+        if (Input.GetKey(myKeys.jumpKey) || growKeyDown) Grow();
         else
         {
             if ((leftKeyDown || Input.GetKey(myKeys.leftKey)) &&
