@@ -43,8 +43,17 @@ public class PlantController : MonoBehaviour
     
     PlayerKeys myKeys;
 
-    public float RotateSpeed = 100f;
-    public float growthRate = 0.1f;
+    // [SerializeField]
+    private  float RotateSpeed = 100f;
+    // [SerializeField]
+    private  float growthSpeedMax = 10f;
+    // [SerializeField]
+    private float growthSpeedMin = 0.05f;
+    // [SerializeField]
+    private float growthAcceleration = 10f;
+    
+
+    private float _curSpeed;
     
     [SerializeField]
     private float _minDist = 0.5f;
@@ -148,7 +157,15 @@ public class PlantController : MonoBehaviour
     {
         if (plantHead.localPosition.y < maxDist)
         {
-            plantHead.localPosition += new Vector3(0, growthRate, 0);
+            
+            // Start at max speed, then slow down exponentially as it grows
+            
+            // Decrease speed exponentially while holding down space
+            _curSpeed = Mathf.Max(_curSpeed - growthAcceleration * Time.deltaTime, growthSpeedMin);
+            plantHead.localPosition += new Vector3(0, _curSpeed*Time.deltaTime, 0);
+            
+            // set a min speed
+            
         }
     }
 
@@ -158,6 +175,7 @@ public class PlantController : MonoBehaviour
         plantHead.localPosition = new Vector3(plantHead.localPosition.x, _minDist, plantHead.localPosition.z);
         neck.SetPosition(0, this.transform.position);
         neck.SetPosition(1, plantHead.position);
+        _curSpeed = growthSpeedMax;
     }
 
     public void OnFlyEaten()
@@ -172,5 +190,6 @@ public class PlantController : MonoBehaviour
     {
         _countFliesEaten = 0;
         maxDist = _minDist;
+        ResetPosition();
     }
 }
