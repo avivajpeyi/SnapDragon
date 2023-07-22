@@ -48,7 +48,7 @@ public class PlantController : MonoBehaviour
 
     // [SerializeField]
     private float growthSpeedMax = 10f;
-
+    
     // [SerializeField]
     private float growthSpeedMin = 0.05f;
 
@@ -154,10 +154,11 @@ public class PlantController : MonoBehaviour
         if (Input.GetKey(myKeys.jumpKey)) Grow();
         else
         {
-            // TODO: prevent going below screen
-            if (Input.GetKey(myKeys.leftKey))
-                transform.Rotate(Vector3.forward * -RotateSpeed * Time.deltaTime);
-            else if (Input.GetKey(myKeys.rightKey))
+            if (Input.GetKey(myKeys.leftKey) && 
+            ((transform.rotation.eulerAngles.z < 180 || transform.rotation.eulerAngles.z > 270))){
+                transform.Rotate(Vector3.forward * -RotateSpeed * Time.deltaTime);}
+            else if (Input.GetKey(myKeys.rightKey) && 
+            ((transform.rotation.eulerAngles.z > 180 || transform.rotation.eulerAngles.z < 90)))
                 transform.Rotate(Vector3.forward * RotateSpeed * Time.deltaTime);
 
             ResetPosition();
@@ -202,7 +203,7 @@ public class PlantController : MonoBehaviour
         _countFliesEaten++;
         ResetPosition();
         maxDist += maxDistIncrease;
-        growthSpeedMax += growthAcceleration*.5f;
+        // growthSpeedMax -= growthAcceleration*.1f;
     }
 
 
