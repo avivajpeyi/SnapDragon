@@ -15,11 +15,13 @@ public class CircleFly : BaseFly
     private float timeElapsed;
     private Vector3 startingPosition;
 
+    private float angle;
+
     public override void SetInitialReferences()
     {
         type = BaseFly.FlyType.Circle;
         startingPosition = transform.position;
-        timeElapsed = Random.value * 2f * Mathf.PI;
+        angle = Random.value * 2f * Mathf.PI;
         if (Random.value > 0.5)
         {
             direction = 1f;
@@ -37,13 +39,12 @@ public class CircleFly : BaseFly
 
     public override void Move()
     {
-        timeElapsed += Time.deltaTime;
-        
+        angle += direction * moveSpeed * Time.deltaTime;
         
         float newX = semiMajorAxis * eccentricity +
-                     semiMajorAxis * Mathf.Cos(direction * moveSpeed * timeElapsed) +
+                     semiMajorAxis * Mathf.Cos(angle) +
                      startingPosition.x;
-        float newY = semiMinorAxis * Mathf.Sin(direction * moveSpeed * timeElapsed) +
+        float newY = semiMinorAxis * Mathf.Sin(angle) +
                      startingPosition.y;
 
         transform.position = new Vector3(newX, newY, 0);
@@ -53,6 +54,6 @@ public class CircleFly : BaseFly
     private void OnCollisionEnter2D(Collision2D col)
     {
         // Rotate in the other direction
-        // direction *= -1f;
+        direction *= -1f;
     }
 }
