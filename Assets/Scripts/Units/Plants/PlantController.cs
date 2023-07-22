@@ -152,17 +152,17 @@ public class PlantController : MonoBehaviour
         {
             Grow();
         }
-        else if (Input.GetKey(myKeys.leftKey) || Input.GetKey(myKeys.rightKey))
-        {
-            // TODO: prevent going below screen
-            // if the player presses the left or right arrow keys, rotate the plant around the z axis
-            if (Input.GetKey(myKeys.leftKey))
-                transform.Rotate(Vector3.forward * -RotateSpeed * Time.deltaTime);
-            else if (Input.GetKey(myKeys.rightKey))
-                transform.Rotate(Vector3.forward * RotateSpeed * Time.deltaTime);
-        }
         else
         {
+            if (Input.GetKey(myKeys.leftKey) || Input.GetKey(myKeys.rightKey))
+            {
+                // TODO: prevent going below screen
+                // if the player presses the left or right arrow keys, rotate the plant around the z axis
+                if (Input.GetKey(myKeys.leftKey))
+                    transform.Rotate(Vector3.forward * -RotateSpeed * Time.deltaTime);
+                else if (Input.GetKey(myKeys.rightKey))
+                    transform.Rotate(Vector3.forward * RotateSpeed * Time.deltaTime);
+            }
             ResetPosition();
         }
         

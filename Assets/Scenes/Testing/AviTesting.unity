@@ -371,13 +371,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 0
-  flySprite: {fileID: 0}
   flyValue: 1
   flyType: 3
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &185991766
 CircleCollider2D:
@@ -608,13 +605,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 0
-  flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &532890118
 CircleCollider2D:
@@ -987,13 +981,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 0
-  flySprite: {fileID: 0}
   flyValue: 1
   flyType: 3
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &659071640
 CircleCollider2D:
@@ -1349,13 +1340,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 0
-  flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &876603249
 CircleCollider2D:
@@ -1555,13 +1543,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 0
-  flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &1332785606
 CircleCollider2D:
@@ -1677,13 +1662,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 0
-  flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &1579141385
 CircleCollider2D:
@@ -1799,13 +1781,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 0
-  flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &1707919158
 CircleCollider2D:
@@ -2004,13 +1983,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 0
-  flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!1 &2035119581
 GameObject:
@@ -2126,13 +2102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 0
-  flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!1 &2113737535
 GameObject:
@@ -2165,13 +2138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 0
-  flySprite: {fileID: 0}
   flyValue: 1
   flyType: 3
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &2113737537
 CircleCollider2D:
@@ -2287,13 +2257,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec7e977a6f8c4c4a9614414ccb945d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 0
-  flySprite: {fileID: 0}
   flyValue: 1
   flyType: 0
   canMove: 1
   moveSpeed: 0
-  direction: {x: 0, y: 0, z: 0}
   movementAngle: 0
 --- !u!58 &2123075263
 CircleCollider2D:
