@@ -103,10 +103,10 @@ public class FlyFactory : MonoBehaviour
     }
 
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         // Shade in bounds area
-        Gizmos.color = new Color(1, 0, 0, 0.5f);
+        Gizmos.color = new Color(1, 0, 0, 0.1f);
         Gizmos.DrawCube(bounds.center, bounds.size);
     }
 }
