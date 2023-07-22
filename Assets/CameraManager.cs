@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
-public class CameraManager : Singleton<CameraManager>
+public class CameraManager : StaticInstance<CameraManager>
 {
     [SerializeField] private CinemachineVirtualCamera vcam_follow;
     [SerializeField] private CinemachineVirtualCamera vcam_goal;
