@@ -99,9 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneWidth: 0
   sceneHeight: 0
-  LineFly: {fileID: 4847128828130582460, guid: 6df97a182433dfc49823902f4a4c9bc5, type: 3}
-  CircleFly: {fileID: 1444353070652354313, guid: 779536d84ed30d445b73bc3bed0108b4, type: 3}
-  RandomFly: {fileID: 7937357837296778720, guid: b1ad82030d8ac4843981cbe9e0433dbb, type: 3}
+  LineFly: {fileID: 6413799995900875843, guid: 959bc313e02370a4589686606abdc7c8, type: 3}
+  CircleFly: {fileID: 6413799995900875843, guid: ac451cee78fcb004ba1f9bdca6e975ee, type: 3}
+  RandomFly: {fileID: 6413799995900875843, guid: 4c55fa56da2a0814c97bed1866a3e3c3, type: 3}
   framesPerSpawn: 0
   lineFlySpawnFrequency: 0
   lineFlyCount: 0
