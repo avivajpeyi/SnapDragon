@@ -14,16 +14,35 @@ public class CircleFly : BaseFly
         CircleFlyInit();
     }
 
-    public float moveSpeed = 2f;
-    public bool isClockwise;
+    public float moveSpeed = 3f;
+    public float direction;
     public float eccentricity;
 
+    private float semiMajorAxis;
+    private float semiMinorAxis;
+    private float timeElapsed;
+    private Vector3 startingPosition;
+
     private void CircleFlyInit() {
-        // Movement logic init
+        startingPosition = transform.position;
+        timeElapsed = Random.value * 2f * Mathf.PI;
+        if (Random.value > 0.5) {
+            direction = 1f;
+        } else {
+            direction = -1f;
+        } 
+        eccentricity = Random.value;
+        semiMinorAxis = 1f;
+        semiMajorAxis = semiMinorAxis / Mathf.Sqrt(1f - eccentricity * eccentricity);
         flyValue = 2;
     }
 
     public override void Move() {
-        // Movement logic
+        timeElapsed += Time.deltaTime;
+
+        float newX = semiMajorAxis * eccentricity + semiMajorAxis * Mathf.Cos(direction * moveSpeed * timeElapsed) + startingPosition.x;
+        float newY = semiMinorAxis * Mathf.Sin(direction * moveSpeed * timeElapsed) + startingPosition.y;
+
+        transform.position = new Vector3(newX, newY, 0);
     }
 }
