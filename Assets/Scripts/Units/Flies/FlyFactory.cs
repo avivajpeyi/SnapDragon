@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 public class FlyFactory : Singleton<FlyFactory>
@@ -10,15 +12,25 @@ public class FlyFactory : Singleton<FlyFactory>
 
 
     private int frameCount;
-    private float sceneWidth;
-    private float sceneHeight;
+    [SerializeField]
+    private Bounds bounds;
 
 
     void Start()
     {
-        CalculateScreneSize();
+        // if bounds are all zero, warn the user
+        if (bounds.size == Vector3.zero)
+        {
+            Debug.LogError("FlyFactory has no bounds (set in the inspector)");
+        }
         framesPerSpawn = 540;
         frameCount = 0;
+
+        foreach (var flyDat in FlyDataList)
+        {
+            flyDat.count = 0;
+        }
+        
         for (int i = 0; i < 3; i++)
             Spawn();
     }
@@ -38,7 +50,7 @@ public class FlyFactory : Singleton<FlyFactory>
     {
         foreach (var flyDat in FlyDataList)
         {
-            if (Random.value < (1- flyDat.count/flyDat.spawnMax))
+            if (Random.value < (1 - flyDat.count / flyDat.spawnMax))
             {
                 flyDat.count++;
                 CreateFly(flyDat.prefab);
@@ -50,27 +62,24 @@ public class FlyFactory : Singleton<FlyFactory>
     {
         GameObject instantiatedFly = Instantiate(
             flyPrefab,
-            generatePosition(),
+            RandomPointInBounds(),
             transform.rotation
         );
         return instantiatedFly;
     }
 
-    private void CalculateScreneSize()
-    {
-        float halfHeight = Camera.main.orthographicSize;
-        float halfWidth = halfHeight * Camera.main.aspect;
-        sceneWidth = halfWidth * 2f;
-        sceneHeight = halfHeight * 2f;
-    }
 
 
-    private Vector3 generatePosition()
+
+    private Vector3 RandomPointInBounds()
     {
-        float xPos = Random.value * (sceneWidth) - sceneWidth / 2;
-        float yPos = Random.value * (sceneHeight) - sceneHeight / 2;
-        return new Vector3(xPos, yPos, 0);
+        return new Vector3(
+            Random.Range(bounds.min.x, bounds.max.x),
+            Random.Range(bounds.min.y, bounds.max.y),
+            0
+        );
     }
+
 
     public void destroyFly(GameObject flyG0)
     {
@@ -80,7 +89,7 @@ public class FlyFactory : Singleton<FlyFactory>
         {
             foreach (var flyData in FlyDataList)
             {
-                if (flyData.type == fly.flyType)
+                if (flyData.type == fly.type)
                 {
                     flyData.count -= 1;
                     Debug.Log("Fly removed");
@@ -89,5 +98,13 @@ public class FlyFactory : Singleton<FlyFactory>
         }
 
         Destroy(fly.transform.root.gameObject);
+    }
+
+
+    private void OnDrawGizmos()
+    {
+        // Shade in bounds area
+        Gizmos.color = new Color(1, 0, 0, 0.5f);
+        Gizmos.DrawCube(bounds.center, bounds.size);
     }
 }

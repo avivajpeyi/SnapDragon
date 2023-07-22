@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6413799995900875966}
   - component: {fileID: 6413799995900875964}
   - component: {fileID: 7700359128675006266}
-  m_Layer: 0
+  - component: {fileID: -1110763235627670238}
+  m_Layer: 7
   m_Name: LineFly
   m_TagString: Fly
   m_Icon: {fileID: 0}
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flyValue: 1
-  flyType: 0
+  type: 0
   canMove: 1
   moveSpeed: 2
   movementAngle: 0
@@ -67,6 +68,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!50 &-1110763235627670238
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6413799995900875843}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 719caa20dfbbb45b7b1327c54cf4de38, type: 2}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1001 &5073191102613323352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -137,6 +159,10 @@ PrefabInstance:
     - target: {fileID: 732608428195436662, guid: 4cd7966cd9ecd47ad9d4f80571e18448, type: 3}
       propertyPath: m_Name
       value: fly_sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 732608428195436662, guid: 4cd7966cd9ecd47ad9d4f80571e18448, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cd7966cd9ecd47ad9d4f80571e18448, type: 3}

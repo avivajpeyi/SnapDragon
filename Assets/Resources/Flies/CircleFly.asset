@@ -15,6 +15,6 @@ MonoBehaviour:
   type: 1
   spawnFrequency: 5
   spawnProb: 0.5
-  count: 44
-  spawnMax: 10
-  prefab: {fileID: 1444353070652354313, guid: 779536d84ed30d445b73bc3bed0108b4, type: 3}
+  count: 530
+  spawnMax: 3
+  prefab: {fileID: 6413799995900875843, guid: ac451cee78fcb004ba1f9bdca6e975ee, type: 3}

@@ -4,37 +4,41 @@ using UnityEngine;
 
 public class RandomFly : BaseFly
 {
-
-    public RandomFly(){
-        flyType = BaseFly.FlyType.Random;
-    }
-
-    void Start() {
-        RandomFlyInit();
-    }
-
-    public float moveMin = 0.5f;
-    public float moveMax = 10f;
+    float moveMin = 0.5f;
+    float moveMax = 10f;
     public float moveSpeed;
-    public float directChangeThresh;
-    public float movementAngle;
+    float directChangeThresh;
+    float movementAngle;
 
-    private void RandomFlyInit() {
-        updateMovement();
+    public RandomFly()
+    {
+        type = BaseFly.FlyType.Random;
+    }
+
+    public override void SetInitialReferences()
+    {
         flyValue = 3f;
-        directChangeThresh = 0.97f;
+        // Random flopat between 0.95 and 1
+        directChangeThresh = Random.Range(0.95f, 1f);
     }
 
-    public override void Move() {
-        if (Random.value >= directChangeThresh) {
-            updateMovement();
+
+    public override void Move()
+    {
+        if (Random.value >= directChangeThresh)
+        {
+            GetKicked();
         }
-       
-        transform.position += new Vector3(Mathf.Sin(movementAngle), Mathf.Cos(movementAngle), 0) * moveSpeed * Time.deltaTime;
     }
 
-    private void updateMovement() {
-        movementAngle = Random.value * 2f * Mathf.PI;
-        moveSpeed = Random.value * (moveMax - moveMin) + moveMin;
+    void GetKicked()
+    {
+        // zero current velocity
+        rb.velocity = Vector2.zero;
+        // Add small force in new direction
+        rb.AddForce(
+            new Vector2(Mathf.Sin(movementAngle), Mathf.Cos(movementAngle)) * (moveSpeed * 0.1f),
+            ForceMode2D.Impulse);
     }
+
 }

@@ -30,6 +30,11 @@ public class FlyDVD : BaseFly
     //     direction = direction.normalized;
     // }
 
+    public override void SetInitialReferences()
+    {
+        // pass
+    }
+
     public override void Move() {
         // transform.position += new Vector3(0,1,0) * moveSpeed * Time.deltaTime;
         //move dvd logo in current direction and speed
