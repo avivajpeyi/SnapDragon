@@ -721,7 +721,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538495899}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.20029807, y: 8.11808, z: -15}
+  m_LocalPosition: {x: 0.2137596, y: 8.11809, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1694,7 +1694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8581300988130822326, guid: da5880442bd01d44da7854109c29854f, type: 3}
       propertyPath: bounds.m_Center.x
-      value: -6.53
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 8581300988130822326, guid: da5880442bd01d44da7854109c29854f, type: 3}
       propertyPath: bounds.m_Center.y
@@ -1702,7 +1702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8581300988130822326, guid: da5880442bd01d44da7854109c29854f, type: 3}
       propertyPath: bounds.m_Extent.x
-      value: 4.27
+      value: 6.11
       objectReference: {fileID: 0}
     - target: {fileID: 8581300988130822326, guid: da5880442bd01d44da7854109c29854f, type: 3}
       propertyPath: bounds.m_Extent.y
@@ -1877,8 +1877,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134575384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.76, y: 25.57, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.25, y: 25.57, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2261,7 +2261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8581300988130822326, guid: da5880442bd01d44da7854109c29854f, type: 3}
       propertyPath: bounds.m_Center.x
-      value: 7.39
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 8581300988130822326, guid: da5880442bd01d44da7854109c29854f, type: 3}
       propertyPath: bounds.m_Center.y
@@ -2269,7 +2269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8581300988130822326, guid: da5880442bd01d44da7854109c29854f, type: 3}
       propertyPath: bounds.m_Extent.x
-      value: 4.27
+      value: 4.59
       objectReference: {fileID: 0}
     - target: {fileID: 8581300988130822326, guid: da5880442bd01d44da7854109c29854f, type: 3}
       propertyPath: bounds.m_Extent.y
