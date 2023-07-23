@@ -42,16 +42,13 @@ public class PlantController : MonoBehaviour
 
 
     PlayerKeys myKeys;
-
-    // [SerializeField]
+    
     private float RotateSpeed = 100f;
 
-    // [SerializeField]
-    private float growthSpeedMax = 100f;
 
     [SerializeField] private float HEIGHT_LIMIT = 100f;
+    private float growthSpeedMax;
     
-    // [SerializeField]
     private float growthSpeedMin = 0.05f;
 
     [SerializeField]
@@ -69,7 +66,8 @@ public class PlantController : MonoBehaviour
     private float _curDist;
 
     [SerializeField] private float _minDist = 0.5f;
-    public float maxDist = 25.0f;
+    public float maxDist;
+    private float maxDistQueue;
     
     public bool canMove = false;
     
@@ -126,7 +124,11 @@ public class PlantController : MonoBehaviour
         if (Gamepad.all.Count > 0)
             playerInput.SwitchCurrentControlScheme("scheme1", Gamepad.all[((int)playerNum)]);
         
- 
+        
+        maxDist = 10f;
+        growthSpeedMax = 45f;
+
+        maxDistQueue = maxDist;
     }
 
     // Update is called once per frame
@@ -213,6 +215,7 @@ public class PlantController : MonoBehaviour
     public void ResetPosition()
     {
         // back to original y (keep x and z)
+        maxDist = maxDistQueue;
         plantHead.localPosition = new Vector3(plantHead.localPosition.x, _minDist,
             plantHead.localPosition.z);
         neck.SetPosition(0, this.transform.position);
@@ -229,10 +232,12 @@ public class PlantController : MonoBehaviour
             if (myFactory != null)
                 myFactory.enabled = false;
         }
-        
-        
-        maxDist += flyValue;
-        maxDist = Mathf.Min(maxDist, HEIGHT_LIMIT);
+
+//         maxDist += flyValue;
+//         maxDist = Mathf.Min(maxDist, HEIGHT_LIMIT);
+// =======
+        maxDistQueue += flyValue;
+        maxDistQueue = Mathf.Min(maxDistQueue, HEIGHT_LIMIT);
     }
 
 

@@ -5,17 +5,22 @@ using UnityEngine;
 public class RandomFly : BaseFly
 {
     
-    float minTimeBetweenKicks = 0.5f;
-    float maxTimeBetweenKicks = 3f;
+    float minTimeBetweenKicks;
+    float maxTimeBetweenKicks;
     
-    float moveForceMin = 0.5f;
-    float moveForceMax = 7f;
+    float moveForceMin;
+    float moveForceMax;
     public float moveForce;
     float movementAngle;
     bool canGetKicked = true;
 
+
     public RandomFly()
     {
+        minTimeBetweenKicks = 0.5f;
+        maxTimeBetweenKicks = 3f;
+        moveForceMin = 0.5f;
+        moveForceMax = 7f;
         type = BaseFly.FlyType.Random;
     }
 
@@ -25,8 +30,7 @@ public class RandomFly : BaseFly
     }
 
 
-    
-    
+
     
     public override void Move()
     {

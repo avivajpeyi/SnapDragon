@@ -10,7 +10,7 @@ public abstract class BaseFly : MonoBehaviour
     public float flyValue;
     public FlyType type;
 
-    public bool canMove = true;
+    public bool canMove = false;
 
     private FlyFactory myFactory;
     protected AudioClip soundFX;
@@ -27,7 +27,7 @@ public abstract class BaseFly : MonoBehaviour
 
     private void OnDestroy() => GameManager.OnBeforeStateChanged -= OnStateChanged;
 
-    void Start()
+    protected void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponentInChildren<SpriteRenderer>();

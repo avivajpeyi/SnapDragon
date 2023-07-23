@@ -7,6 +7,14 @@ using Random = UnityEngine.Random;
 
 public class FlyFactory : MonoBehaviour
 {
+
+    public bool canSpawn = false;
+
+    private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
+
+    private void OnDestroy() => GameManager.OnBeforeStateChanged -= OnStateChanged;
+
+
     public int framesPerSpawn;
     public List<FlyData> FlyDataList = new List<FlyData>();
 
@@ -30,19 +38,25 @@ public class FlyFactory : MonoBehaviour
         {
             flyDat.count = 0;
         }
-        
-        for (int i = 0; i < 3; i++)
-            Spawn();
     }
 
 
     void Update()
     {
+
         frameCount++;
-        if (frameCount >= framesPerSpawn)
+        if (frameCount >= framesPerSpawn && canSpawn)
         {
             Spawn();
             frameCount = 0;
+        }
+    }
+
+    void OnStateChanged(GameState newState)
+    {
+        if (newState == GameState.InGame)
+        {
+            canSpawn = true;
         }
     }
 
@@ -93,7 +107,6 @@ public class FlyFactory : MonoBehaviour
                 if (flyData.type == fly.type)
                 {
                     flyData.count -= 1;
-                    Debug.Log("Fly removed");
                 }
             }
             Destroy(flyG0, 0.1f);
