@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CircleFly
   m_EditorClassIdentifier: 
   type: 1
-  count: 1
-  spawnMax: 10
+  count: 6
+  spawnMax: 6
   prefab: {fileID: 6413799995900875843, guid: ac451cee78fcb004ba1f9bdca6e975ee, type: 3}

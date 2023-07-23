@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LineFly
   m_EditorClassIdentifier: 
   type: 0
-  count: 0
-  spawnMax: 10
+  count: 5
+  spawnMax: 5
   prefab: {fileID: 6413799995900875843, guid: 959bc313e02370a4589686606abdc7c8, type: 3}
