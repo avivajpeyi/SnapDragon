@@ -9,8 +9,6 @@ public class LineFly : BaseFly
 
     private Vector2 direction;
 
-    private bool beenKicked = false;
-
     
 
     public override void SetInitialReferences()
@@ -28,9 +26,6 @@ public class LineFly : BaseFly
         if (rb.velocity.magnitude < 0.1f)
         {
             rb.AddForce(direction * moveSpeed, ForceMode2D.Impulse);
-            beenKicked = true;
         }
-        
-        // rb.velocity = direction * moveSpeed;
     }
 }
