@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlantHead : MonoBehaviour
 {
     PlantController plantController;
-    protected AudioClip flyEatenFX;
-    protected GameObject flyEatenParticles;
+    [SerializeField] protected AudioClip flyEatenFX;
+    [SerializeField] protected GameObject flyEatenParticles;
 
     private void Start()
     {
@@ -17,7 +17,13 @@ public class PlantHead : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Fly"))
+        Debug.Log("Dragon collides with " + other.gameObject.name);
+        if (other.gameObject.CompareTag("Plant"))
+        {
+            Debug.Log("Make out time!");
+            plantController.ResetPosition();
+        }
+        else if (other.gameObject.CompareTag("Fly"))
         {
             plantController.OnFlyEaten(other.gameObject.GetComponent<BaseFly>().flyValue);
             AudioSource.PlayClipAtPoint(flyEatenFX, transform.position);

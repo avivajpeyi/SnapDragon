@@ -71,9 +71,7 @@ public class PlantController : MonoBehaviour
     bool growKeyDown = false;
     bool leftKeyDown = false;
     bool rightKeyDown = false;
-
-    
-    private CameraManager _cameraManager;
+    PlayerInput playerInput;
 
     private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
 
@@ -112,8 +110,9 @@ public class PlantController : MonoBehaviour
         {
             myKeys = player2Keys;
         }
-
-        _cameraManager = FindObjectOfType<CameraManager>();
+        
+        playerInput = gameObject.GetComponent<PlayerInput>();
+        playerInput.SwitchCurrentControlScheme("scheme1", Gamepad.all[((int)playerNum)]);
     }
 
     // Update is called once per frame
@@ -156,13 +155,15 @@ public class PlantController : MonoBehaviour
     void HandleInput()
     {
         // if the player presses the space bar, grow the plant
-        if (Input.GetKey(myKeys.jumpKey)) Grow();
+        if (Input.GetKey(myKeys.jumpKey) || growKeyDown) Grow();
         else
         {
-            if (Input.GetKey(myKeys.leftKey) && 
+            if ((leftKeyDown || Input.GetKey(myKeys.leftKey)) &&
+            // if (Input.GetKey(myKeys.leftKey) && 
             ((transform.rotation.eulerAngles.z < 180 || transform.rotation.eulerAngles.z > 270))){
                 transform.Rotate(Vector3.forward * -RotateSpeed * Time.deltaTime);}
-            else if (Input.GetKey(myKeys.rightKey) && 
+            else if ((rightKeyDown || Input.GetKey(myKeys.rightKey)) &&
+            // else if (Input.GetKey(myKeys.rightKey) && 
             ((transform.rotation.eulerAngles.z > 180 || transform.rotation.eulerAngles.z < 90)))
                 transform.Rotate(Vector3.forward * RotateSpeed * Time.deltaTime);
 
@@ -206,9 +207,9 @@ public class PlantController : MonoBehaviour
     public void OnFlyEaten(float flyValue)
     {
         _countFliesEaten++;
-        if (_curDist > distanceForFullScreen && GameManager.Instance.State == GameState.InGame)
+        if (_curDist > distanceForFullScreen)
         {
-            _cameraManager.PrioritizeFull();
+            CameraManager.Instance.PrioritizeFull();
         }
         maxDist += flyValue;
     }
