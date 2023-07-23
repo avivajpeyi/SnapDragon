@@ -11,10 +11,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa67dd737955a45d2927ff54ae0df23d, type: 3}
   m_Name: LineFly
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   type: 0
-  spawnFrequency: 5
-  spawnProb: 0.5
-  count: 426
-  spawnMax: 5
+  count: 0
+  spawnMax: 10
   prefab: {fileID: 6413799995900875843, guid: 959bc313e02370a4589686606abdc7c8, type: 3}
