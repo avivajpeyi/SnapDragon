@@ -43,9 +43,15 @@ public class FlyFactory : MonoBehaviour
     void OnStateChanged(GameState newState)
     {
         if (newState == GameState.InGame)
+        {
+            canSpawn = true;
+            Debug.Log("FlyFactory can spawn now");
             spawnCoroutine = StartCoroutine(SpawnFlies());
+        }
+            
         else
         {
+            canSpawn = false;
             if (spawnCoroutine != null)
             {
                 StopCoroutine(spawnCoroutine);
@@ -58,19 +64,30 @@ public class FlyFactory : MonoBehaviour
     // Make an IEnumerator coroutine that spawns flies
     private IEnumerator SpawnFlies()
     {
-        Spawn();
-        yield return new WaitForSeconds(1);
+        while (canSpawn)
+        {
+            Spawn();
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        
     }
 
     void Spawn()
     {
         foreach (var flyDat in FlyDataList)
         {
-            if (Random.value < (1 - flyDat.count / flyDat.spawnMax))
+            for (int i=0; i<flyDat.spawnMax; i++)
             {
-                flyDat.count++;
-                CreateFly(flyDat.prefab);
+                if (flyDat.count < flyDat.spawnMax)
+                {
+                    Debug.Log("Spwing " + flyDat.type+ " Num SPawned " + flyDat.count + "/" + flyDat.spawnMax);
+                    CreateFly(flyDat.prefab);
+                    flyDat.count++;
+                }
+                    
             }
+
         }
     }
 

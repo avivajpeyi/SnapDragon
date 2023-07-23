@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: RandomFly
   m_EditorClassIdentifier: 
   type: 2
-  spawnFrequency: 5
-  spawnProb: 0.5
-  count: 358
+  count: -1
   spawnMax: 3
   prefab: {fileID: 1531208021522929998, guid: b2ab352bd351e484684d10e86a8948f0, type: 3}
