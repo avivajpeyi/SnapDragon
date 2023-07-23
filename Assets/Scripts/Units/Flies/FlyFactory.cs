@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 
 public class FlyFactory : MonoBehaviour
 {
-
     public bool canSpawn = false;
 
     private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
@@ -20,9 +19,8 @@ public class FlyFactory : MonoBehaviour
 
 
     private int frameCount;
-    [SerializeField]
-    private Bounds bounds;
-
+    [SerializeField] private Bounds bounds;
+    private Coroutine spawnCoroutine;
 
     void Start()
     {
@@ -31,6 +29,7 @@ public class FlyFactory : MonoBehaviour
         {
             Debug.LogError("FlyFactory has no bounds (set in the inspector)");
         }
+
         framesPerSpawn = 540;
         frameCount = 0;
 
@@ -41,23 +40,26 @@ public class FlyFactory : MonoBehaviour
     }
 
 
-    void Update()
-    {
-
-        frameCount++;
-        if (frameCount >= framesPerSpawn && canSpawn)
-        {
-            Spawn();
-            frameCount = 0;
-        }
-    }
-
     void OnStateChanged(GameState newState)
     {
         if (newState == GameState.InGame)
+            spawnCoroutine = StartCoroutine(SpawnFlies());
+        else
         {
-            canSpawn = true;
+            if (spawnCoroutine != null)
+            {
+                StopCoroutine(spawnCoroutine);
+            }
         }
+
+    }
+
+
+    // Make an IEnumerator coroutine that spawns flies
+    private IEnumerator SpawnFlies()
+    {
+        Spawn();
+        yield return new WaitForSeconds(1);
     }
 
     void Spawn()
@@ -84,8 +86,6 @@ public class FlyFactory : MonoBehaviour
     }
 
 
-
-
     private Vector3 RandomPointInBounds()
     {
         return new Vector3(
@@ -109,10 +109,9 @@ public class FlyFactory : MonoBehaviour
                     flyData.count -= 1;
                 }
             }
+
             Destroy(flyG0, 0.1f);
         }
-
-       
     }
 
 
