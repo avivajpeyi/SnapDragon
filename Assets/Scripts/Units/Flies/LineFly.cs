@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LineFly : BaseFly
 {
-    public float moveSpeed = 2f;
+    public float moveSpeed;
     public float movementAngle;
 
     private Vector2 direction;
@@ -13,8 +13,9 @@ public class LineFly : BaseFly
 
     public override void SetInitialReferences()
     {
+        moveSpeed = 6f;
         movementAngle = Random.value * 2f * Mathf.PI;
-        flyValue = 1;
+        flyValue = 2f;
         direction = new Vector2(Mathf.Sin(movementAngle), Mathf.Cos(movementAngle));
         type = BaseFly.FlyType.Line;
     }

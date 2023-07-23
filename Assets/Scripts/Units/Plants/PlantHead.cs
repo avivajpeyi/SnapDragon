@@ -34,7 +34,7 @@ public class PlantHead : MonoBehaviour
 
             BaseFly fly = other.gameObject.GetComponent<BaseFly>();
             fly.OnEaten();
-             _wordArtControllerController.spawnWordArt(transform.position, WordArtController.WordArtTypes.Nom);
+            //  _wordArtControllerController.spawnWordArt(transform.position, WordArtController.WordArtTypes.Nom);
             if (fly.type == BaseFly.FlyType.Winning)
             {
                 GameManager.Instance.ChangeState(GameState.GameOver);

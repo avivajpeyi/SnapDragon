@@ -31,10 +31,10 @@ public class CircleFly : BaseFly
             direction = -1f;
         }
 
-        eccentricity = Random.Range(0.0f, 0.7f);
+        eccentricity = Random.Range(0.0f, 0.9f);
         semiMinorAxis = 1f;
         semiMajorAxis = semiMinorAxis / Mathf.Sqrt(1f - eccentricity * eccentricity);
-        flyValue = 2;
+        flyValue = 1f;
     }
 
     public override void Move()

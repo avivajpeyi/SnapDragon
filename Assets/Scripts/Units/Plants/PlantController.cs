@@ -47,7 +47,7 @@ public class PlantController : MonoBehaviour
     private float RotateSpeed = 100f;
 
     // [SerializeField]
-    private float growthSpeedMax = 100f;
+    private float growthSpeedMax;
     
     // [SerializeField]
     private float growthSpeedMin = 0.05f;
@@ -64,7 +64,8 @@ public class PlantController : MonoBehaviour
     private float _curDist;
 
     [SerializeField] private float _minDist = 0.5f;
-    public float maxDist = 25.0f;
+    public float maxDist;
+    private float maxDistQueue;
     
     public bool canMove = false;
     
@@ -125,6 +126,11 @@ public class PlantController : MonoBehaviour
             playerInput.SwitchCurrentControlScheme("scheme1", Gamepad.all[((int)playerNum)]);
         
         _camManager = FindObjectOfType<CameraManager>();
+
+        maxDist = 10f;
+        growthSpeedMax = 45f;
+
+        maxDistQueue = maxDist;
     }
 
     // Update is called once per frame
@@ -209,6 +215,7 @@ public class PlantController : MonoBehaviour
     public void ResetPosition()
     {
         // back to original y (keep x and z)
+        maxDist = maxDistQueue;
         plantHead.localPosition = new Vector3(plantHead.localPosition.x, _minDist,
             plantHead.localPosition.z);
         neck.SetPosition(0, this.transform.position);
@@ -223,7 +230,7 @@ public class PlantController : MonoBehaviour
         {
             _camManager.PrioritizeFull();
         }
-        maxDist += flyValue;
+        maxDistQueue += flyValue;
     }
 
 
