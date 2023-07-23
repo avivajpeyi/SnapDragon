@@ -85,8 +85,12 @@ public class GameManager : StaticInstance<GameManager>
 
     private void HandleGameOver()
     {
-        // Disable player controls, stop flys from moving
-        // Show game over screen
+        // Pause everythinig's movement
+        
+        
+        
+        
+        
     }
 }
 

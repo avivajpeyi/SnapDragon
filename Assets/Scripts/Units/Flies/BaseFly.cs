@@ -75,6 +75,10 @@ public abstract class BaseFly : MonoBehaviour
         {
             canMove = true;
         }
+        else
+        {
+            canMove = false;
+        }
     }
 
 
@@ -84,6 +88,10 @@ public abstract class BaseFly : MonoBehaviour
         Instantiate(deathParticles, transform.position, Quaternion.identity);
         if (myFactory != null)
             myFactory.destroyFly(this.gameObject);
+        else
+        {
+            Destroy(this, 0.1f);
+        }
     }
 
     public override string ToString()
