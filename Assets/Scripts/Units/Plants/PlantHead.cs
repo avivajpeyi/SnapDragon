@@ -7,8 +7,8 @@ public class PlantHead : MonoBehaviour
 
     WordArt wordArtController;
     PlantController plantController;
-    protected AudioClip flyEatenFX;
-    protected GameObject flyEatenParticles;
+    [SerializeField] protected AudioClip flyEatenFX;
+    [SerializeField] protected GameObject flyEatenParticles;
 
     private void Start()
     {

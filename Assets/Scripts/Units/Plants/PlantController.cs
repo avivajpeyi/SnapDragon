@@ -47,13 +47,17 @@ public class PlantController : MonoBehaviour
     private float RotateSpeed = 100f;
 
     // [SerializeField]
-    private float growthSpeedMax = 10f;
+    private float growthSpeedMax = 100f;
     
     // [SerializeField]
     private float growthSpeedMin = 0.05f;
 
-    // [SerializeField]
+    [SerializeField]
+    private float distanceForFullScreen = 25f;
+
     private float speedReduceFactor = 50;
+    
+    
 
 
     private float _curSpeed;
@@ -69,7 +73,11 @@ public class PlantController : MonoBehaviour
     bool growKeyDown = false;
     bool leftKeyDown = false;
     bool rightKeyDown = false;
+    PlayerInput playerInput;
 
+    [SerializeField]
+    private CameraManager _camManager;
+    
 
     private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
 
@@ -108,6 +116,13 @@ public class PlantController : MonoBehaviour
         {
             myKeys = player2Keys;
         }
+        
+        playerInput = gameObject.GetComponent<PlayerInput>();
+        
+        if (Gamepad.all.Count > 0)
+            playerInput.SwitchCurrentControlScheme("scheme1", Gamepad.all[((int)playerNum)]);
+        
+        _camManager = FindObjectOfType<CameraManager>();
     }
 
     // Update is called once per frame
@@ -150,13 +165,15 @@ public class PlantController : MonoBehaviour
     void HandleInput()
     {
         // if the player presses the space bar, grow the plant
-        if (Input.GetKey(myKeys.jumpKey)) Grow();
+        if (Input.GetKey(myKeys.jumpKey) || growKeyDown) Grow();
         else
         {
-            if (Input.GetKey(myKeys.leftKey) && 
+            if ((leftKeyDown || Input.GetKey(myKeys.leftKey)) &&
+            // if (Input.GetKey(myKeys.leftKey) && 
             ((transform.rotation.eulerAngles.z < 180 || transform.rotation.eulerAngles.z > 270))){
                 transform.Rotate(Vector3.forward * -RotateSpeed * Time.deltaTime);}
-            else if (Input.GetKey(myKeys.rightKey) && 
+            else if ((rightKeyDown || Input.GetKey(myKeys.rightKey)) &&
+            // else if (Input.GetKey(myKeys.rightKey) && 
             ((transform.rotation.eulerAngles.z > 180 || transform.rotation.eulerAngles.z < 90)))
                 transform.Rotate(Vector3.forward * RotateSpeed * Time.deltaTime);
 
@@ -200,6 +217,10 @@ public class PlantController : MonoBehaviour
     public void OnFlyEaten(float flyValue)
     {
         _countFliesEaten++;
+        if (_curDist > distanceForFullScreen || GameManager.Instance.State == GameState.InGame)
+        {
+            _camManager.PrioritizeFull();
+        }
         maxDist += flyValue;
     }
 
