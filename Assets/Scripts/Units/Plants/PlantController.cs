@@ -67,7 +67,9 @@ public class PlantController : MonoBehaviour
     public float maxDist = 25.0f;
     
     public bool canMove = false;
-    LineRenderer neck;
+    
+    
+    [SerializeField] LineRenderer neck;
     public Transform plantHead;
 
     bool growKeyDown = false;
@@ -105,7 +107,7 @@ public class PlantController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        neck = GetComponent<LineRenderer>();
+        // neck = GetComponent<LineRenderer>();
         neck.SetPosition(0, this.transform.position);
         neck.SetPosition(1, plantHead.position);
         if (playerNum == PlayerNum.Player1)
