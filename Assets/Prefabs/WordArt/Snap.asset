@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69bbdfa0b34489f895cda0b3e346a3f, type: 3}
   m_Name: Snap
   m_EditorClassIdentifier: 
-  type: 0
-  sfx: {fileID: 0}
-  prefab: {fileID: 6741693762621311418, guid: 80c7d10d9083ce4489d33aedac9ef34f, type: 3}
+  type: 2
+  sfx: {fileID: 8300000, guid: 5a949fcd5b8be42519a68f1a67caf8e7, type: 3}
+  prefab: {fileID: 1962729552707589305, guid: 69ec53cbd1791e948a828a76040850eb, type: 3}

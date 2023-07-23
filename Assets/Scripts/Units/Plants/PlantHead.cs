@@ -12,7 +12,7 @@ public class PlantHead : MonoBehaviour
 
     private void Start()
     {
-        _wordArtControllerController = Resources.Load<GameObject>("WordArtController").GetComponent<WordArtController>();
+        _wordArtControllerController = FindObjectOfType<WordArtController>();
         plantController = GetComponentInParent<PlantController>();
         flyEatenFX = Resources.Load<AudioClip>("FlyEatenAudio");
         flyEatenParticles = Resources.Load<GameObject>("FlyEatenFx");
@@ -34,7 +34,7 @@ public class PlantHead : MonoBehaviour
 
             BaseFly fly = other.gameObject.GetComponent<BaseFly>();
             fly.OnEaten();
-             _wordArtControllerController.spawnWordArt(transform.position, WordArtController.WordArtTypes.Nom);
+             _wordArtControllerController.SpawnRandomWordArt(this.transform.position);
             if (fly.type == BaseFly.FlyType.Winning)
             {
                 GameManager.Instance.ChangeState(GameState.GameOver);
