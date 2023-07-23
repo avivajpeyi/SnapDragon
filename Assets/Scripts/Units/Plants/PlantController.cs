@@ -116,7 +116,7 @@ public class PlantController : MonoBehaviour
         
         playerInput = gameObject.GetComponent<PlayerInput>();
         playerInput.SwitchCurrentControlScheme("scheme1", Gamepad.all[((int)playerNum)]);
-        
+
         _camManager = FindObjectOfType<CameraManager>();
     }
 
