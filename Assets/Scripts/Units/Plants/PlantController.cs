@@ -236,7 +236,7 @@ public class PlantController : MonoBehaviour
 //         maxDist += flyValue;
 //         maxDist = Mathf.Min(maxDist, HEIGHT_LIMIT);
 // =======
-        maxDistQueue += flyValue;
+        maxDistQueue += flyValue*3f/4f;
         maxDistQueue = Mathf.Min(maxDistQueue, HEIGHT_LIMIT);
     }
 
