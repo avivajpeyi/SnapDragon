@@ -81,6 +81,7 @@ public class FlyFactory : MonoBehaviour
             {
                 if (flyDat.count < flyDat.spawnMax)
                 {
+                    Debug.Log("Spwing " + flyDat.type+ " Num SPawned " + flyDat.count + "/" + flyDat.spawnMax);
                     CreateFly(flyDat.prefab);
                     flyDat.count++;
                 }
