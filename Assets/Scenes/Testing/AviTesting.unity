@@ -202,7 +202,7 @@ MonoBehaviour:
   m_CenterOnActivate: 1
   m_GroupFramingMode: 1
   m_AdjustmentMode: 1
-  m_GroupFramingSize: 0.8
+  m_GroupFramingSize: 0.51
   m_MaxDollyIn: 5000
   m_MaxDollyOut: 5000
   m_MinimumDistance: 1
@@ -655,9 +655,9 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 19.3
-  orthographic: 0
-  orthographic size: 10
+  field of view: 51.08
+  orthographic: 1
+  orthographic size: 9.803922
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
-    m_Style: 2
+    m_Style: 1
     m_Time: 2
     m_CustomCurve:
       serializedVersion: 2
@@ -715,7 +715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538495899}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.44371736, y: 3.61457, z: -41.757214}
+  m_LocalPosition: {x: 0.21665013, y: -0.5349999, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -781,7 +781,7 @@ MonoBehaviour:
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
-    ModeOverride: 0
+    ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
     m_SensorSize: {x: 1, y: 1}
@@ -1345,7 +1345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872744426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2495431, y: 8.935863, z: 0}
+  m_LocalPosition: {x: 1.6004361, y: 6.722916, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1418,7 +1418,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1020111749}
   - component: {fileID: 1020111750}
-  - component: {fileID: 1020111751}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1453,49 +1452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1020111751
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1020111748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0.048
-  m_LookaheadSmoothing: 0
-  m_LookaheadIgnoreY: 0
-  m_XDamping: 16.53
-  m_YDamping: 16.74
-  m_ZDamping: 16.7
-  m_TargetMovementOnly: 1
-  m_ScreenX: 0.498
-  m_ScreenY: 0.5
-  m_CameraDistance: 10
-  m_DeadZoneWidth: 2
-  m_DeadZoneHeight: 2
-  m_DeadZoneDepth: 0
-  m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 2
-  m_SoftZoneHeight: 2
-  m_BiasX: -0.5
-  m_BiasY: 0
-  m_CenterOnActivate: 1
-  m_GroupFramingMode: 2
-  m_AdjustmentMode: 0
-  m_GroupFramingSize: 0.8
-  m_MaxDollyIn: 5000
-  m_MaxDollyOut: 5000
-  m_MinimumDistance: 1
-  m_MaximumDistance: 5000
-  m_MinimumFOV: 3
-  m_MaximumFOV: 60
-  m_MinimumOrthoSize: 1
-  m_MaximumOrthoSize: 5000
 --- !u!1001 &1098740690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1689,8 +1645,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 16.198837, y: 29.854954}
       - {x: -14.940062, y: 29.794245}
-      - {x: -18.263956, y: -3.7466116}
-      - {x: 20.32144, y: -3.2108212}
+      - {x: -25.062244, y: -3.5970325}
+      - {x: 32.072678, y: -3.5628624}
 --- !u!4 &1111528866
 Transform:
   m_ObjectHideFlags: 0
@@ -1745,12 +1701,12 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1894254833}
   m_Lens:
-    FieldOfView: 19.3
-    OrthographicSize: 10
+    FieldOfView: 51.08
+    OrthographicSize: 20.1
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
-    ModeOverride: 0
+    ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
     m_SensorSize: {x: 1, y: 1}
@@ -1770,7 +1726,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248852104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5466503, y: -0.5349996, z: -41.757214}
+  m_LocalPosition: {x: 0.21665013, y: -0.5349999, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1785,7 +1741,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248852104}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
@@ -1845,7 +1801,7 @@ MonoBehaviour:
   m_Priority: 100
   m_StandbyUpdate: 0
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 872744427}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 122.1
     OrthographicSize: 18.22
@@ -2173,7 +2129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894254831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.799145, y: -0.53499985, z: 0}
+  m_LocalPosition: {x: 2.1116161, y: -0.53499985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2430,8 +2386,12 @@ PrefabInstance:
       value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3494432258139054055, guid: f1b8b0598d4cb453f992cb0d8a49e776, type: 3}
+      propertyPath: _camManager
+      value: 
+      objectReference: {fileID: 137457789}
+    - target: {fileID: 3494432258139054055, guid: f1b8b0598d4cb453f992cb0d8a49e776, type: 3}
       propertyPath: distanceForFullScreen
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3494432258256776004, guid: f1b8b0598d4cb453f992cb0d8a49e776, type: 3}
       propertyPath: m_Name
@@ -2451,7 +2411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3494432258256776006, guid: f1b8b0598d4cb453f992cb0d8a49e776, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.08
+      value: 8.07
       objectReference: {fileID: 0}
     - target: {fileID: 3494432258256776006, guid: f1b8b0598d4cb453f992cb0d8a49e776, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2520,7 +2480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7720787729709004238, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.94
+      value: -7.59
       objectReference: {fileID: 0}
     - target: {fileID: 7720787729709004238, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2571,8 +2531,12 @@ PrefabInstance:
       value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 7720787730163698806, guid: 0c60ee5447a6743768499c944d680384, type: 3}
+      propertyPath: _camManager
+      value: 
+      objectReference: {fileID: 137457789}
+    - target: {fileID: 7720787730163698806, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: distanceForFullScreen
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7720787730406663536, guid: 0c60ee5447a6743768499c944d680384, type: 3}
       propertyPath: m_Material

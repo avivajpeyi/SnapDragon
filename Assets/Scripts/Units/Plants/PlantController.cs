@@ -56,6 +56,8 @@ public class PlantController : MonoBehaviour
     private float distanceForFullScreen = 25f;
 
     private float speedReduceFactor = 50;
+    
+    
 
 
     private float _curSpeed;
@@ -73,6 +75,7 @@ public class PlantController : MonoBehaviour
     bool rightKeyDown = false;
     PlayerInput playerInput;
 
+    [SerializeField]
     private CameraManager _camManager;
     
 
@@ -115,7 +118,9 @@ public class PlantController : MonoBehaviour
         }
         
         playerInput = gameObject.GetComponent<PlayerInput>();
-        playerInput.SwitchCurrentControlScheme("scheme1", Gamepad.all[((int)playerNum)]);
+        
+        if (Gamepad.all.Count > 0)
+            playerInput.SwitchCurrentControlScheme("scheme1", Gamepad.all[((int)playerNum)]);
         
         _camManager = FindObjectOfType<CameraManager>();
     }
@@ -212,7 +217,7 @@ public class PlantController : MonoBehaviour
     public void OnFlyEaten(float flyValue)
     {
         _countFliesEaten++;
-        if (_curDist > distanceForFullScreen)
+        if (_curDist > distanceForFullScreen || GameManager.Instance.State == GameState.InGame)
         {
             _camManager.PrioritizeFull();
         }
