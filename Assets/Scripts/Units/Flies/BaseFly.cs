@@ -96,6 +96,8 @@ public abstract class BaseFly : MonoBehaviour
                 return "Circle Fly";
             case FlyType.Random:
                 return "Random Fly";
+            case FlyType.Winning:
+                return "Winning Fly";
             default:
                 return "Invalid Dly";
         }
