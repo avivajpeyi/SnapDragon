@@ -73,6 +73,9 @@ public class PlantController : MonoBehaviour
     bool rightKeyDown = false;
     PlayerInput playerInput;
 
+    private CameraManager _camManager;
+    
+
     private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
 
     private void OnDestroy() => GameManager.OnBeforeStateChanged -= OnStateChanged;
@@ -113,6 +116,8 @@ public class PlantController : MonoBehaviour
         
         playerInput = gameObject.GetComponent<PlayerInput>();
         playerInput.SwitchCurrentControlScheme("scheme1", Gamepad.all[((int)playerNum)]);
+        
+        _camManager = FindObjectOfType<CameraManager>();
     }
 
     // Update is called once per frame
@@ -209,7 +214,7 @@ public class PlantController : MonoBehaviour
         _countFliesEaten++;
         if (_curDist > distanceForFullScreen)
         {
-            CameraManager.Instance.PrioritizeFull();
+            _camManager.PrioritizeFull();
         }
         maxDist += flyValue;
     }
