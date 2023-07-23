@@ -39,6 +39,7 @@ public class PlantHead : MonoBehaviour
             if (fly.type == BaseFly.FlyType.Winning)
             {
                 GameManager.Instance.ChangeState(GameState.GameOver);
+                
             }
         }
     }

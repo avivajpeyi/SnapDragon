@@ -31,7 +31,7 @@ public class GameManager : StaticInstance<GameManager>
         }
 
         // If press R
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.anyKeyDown && State == GameState.GameOver)
         {
             // Restart the game
             // ChangeState(GameState.Starting);
@@ -85,8 +85,12 @@ public class GameManager : StaticInstance<GameManager>
 
     private void HandleGameOver()
     {
-        // Disable player controls, stop flys from moving
-        // Show game over screen
+        // Pause everythinig's movement
+        
+        
+        
+        
+        
     }
 }
 
