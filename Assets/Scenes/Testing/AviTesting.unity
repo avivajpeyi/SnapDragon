@@ -470,7 +470,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!224 &264489436
 RectTransform:
@@ -3084,9 +3084,6 @@ MonoBehaviour:
   FlyDataList:
   - {fileID: 11400000, guid: e8d83a683f2b64ec8835e7e38df601a2, type: 2}
   - {fileID: 11400000, guid: a0ea4d765eb3f4469ac295c422a538a9, type: 2}
-  - {fileID: 11400000, guid: 01d871d9526104625bef15db841f3a2b, type: 2}
-  - {fileID: 11400000, guid: 01d871d9526104625bef15db841f3a2b, type: 2}
-  - {fileID: 11400000, guid: 01d871d9526104625bef15db841f3a2b, type: 2}
   - {fileID: 11400000, guid: 01d871d9526104625bef15db841f3a2b, type: 2}
   bounds:
     m_Center: {x: 0, y: 11.4, z: 0}

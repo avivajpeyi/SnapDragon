@@ -31,7 +31,7 @@ public class GameManager : StaticInstance<GameManager>
         }
 
         // If press R
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.anyKeyDown && State == GameState.GameOver)
         {
             // Restart the game
             // ChangeState(GameState.Starting);
