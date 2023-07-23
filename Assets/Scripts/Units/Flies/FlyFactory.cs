@@ -116,7 +116,6 @@ public class FlyFactory : MonoBehaviour
     public void destroyFly(GameObject flyG0)
     {
         BaseFly fly = flyG0.GetComponent<BaseFly>();
-
         if (fly != null)
         {
             foreach (var flyData in FlyDataList)
