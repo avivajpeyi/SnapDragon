@@ -30,7 +30,7 @@
                 {
                     "name": "up",
                     "id": "b063ca3f-c802-4ac1-a4b2-475da7a9d248",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "scheme1",
