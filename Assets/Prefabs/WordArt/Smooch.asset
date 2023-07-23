@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69bbdfa0b34489f895cda0b3e346a3f, type: 3}
   m_Name: Smooch
   m_EditorClassIdentifier: 
-  type: 0
-  sfx: {fileID: 0}
-  prefab: {fileID: 6741693762621311418, guid: 80c7d10d9083ce4489d33aedac9ef34f, type: 3}
+  type: 4
+  sfx: {fileID: 8300000, guid: ad66f9374fdda4804871904b170311c4, type: 3}
+  prefab: {fileID: 6516122113592322265, guid: c9c44bc3e7da24d64ab858afd928b00b, type: 3}

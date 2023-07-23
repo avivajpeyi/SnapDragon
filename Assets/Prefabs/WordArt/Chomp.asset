@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Chomp
   m_EditorClassIdentifier: 
   type: 0
-  sfx: {fileID: 0}
-  prefab: {fileID: 6741693762621311418, guid: 80c7d10d9083ce4489d33aedac9ef34f, type: 3}
+  sfx: {fileID: 8300000, guid: b33485c0ae4464b0687d05803052f4ca, type: 3}
+  prefab: {fileID: 7391072650736438732, guid: b61ea4971ff8d144f9ed94a89b01fb9c, type: 3}
