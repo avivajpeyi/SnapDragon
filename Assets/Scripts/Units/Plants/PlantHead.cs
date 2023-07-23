@@ -26,7 +26,8 @@ public class PlantHead : MonoBehaviour
             Debug.Log("Make out time!");
             plantController.ResetPosition();
         }
-        else if (other.gameObject.CompareTag("Fly"))
+        else if (other.gameObject.CompareTag("Fly") && GameManager.Instance.State == 
+        GameState.InGame)
         {
             plantController.OnFlyEaten(other.gameObject.GetComponent<BaseFly>().flyValue);
             AudioSource.PlayClipAtPoint(flyEatenFX, transform.position);

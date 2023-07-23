@@ -48,6 +48,8 @@ public class PlantController : MonoBehaviour
 
     // [SerializeField]
     private float growthSpeedMax = 100f;
+
+    [SerializeField] private float HEIGHT_LIMIT = 100f;
     
     // [SerializeField]
     private float growthSpeedMin = 0.05f;
@@ -57,6 +59,9 @@ public class PlantController : MonoBehaviour
 
     private float speedReduceFactor = 50;
     
+    
+    
+    [SerializeField] private FlyFactory myFactory;
     
 
 
@@ -77,9 +82,6 @@ public class PlantController : MonoBehaviour
     bool rightKeyDown = false;
     PlayerInput playerInput;
 
-    [SerializeField]
-    private CameraManager _camManager;
-    
 
     private void Awake() => GameManager.OnBeforeStateChanged += OnStateChanged;
 
@@ -124,7 +126,7 @@ public class PlantController : MonoBehaviour
         if (Gamepad.all.Count > 0)
             playerInput.SwitchCurrentControlScheme("scheme1", Gamepad.all[((int)playerNum)]);
         
-        _camManager = FindObjectOfType<CameraManager>();
+ 
     }
 
     // Update is called once per frame
@@ -200,6 +202,8 @@ public class PlantController : MonoBehaviour
     {
         if (HeadHasNotReachedMaxDist)
         {
+            
+            
             float newSpeed = _curSpeed - MathF.Pow(_curDist/maxDist,2);
             _curSpeed = Mathf.Max(newSpeed, growthSpeedMin);
             plantHead.localPosition += new Vector3(0, _curSpeed * Time.deltaTime, 0);
@@ -219,11 +223,16 @@ public class PlantController : MonoBehaviour
     public void OnFlyEaten(float flyValue)
     {
         _countFliesEaten++;
-        if (_curDist > distanceForFullScreen || GameManager.Instance.State == GameState.InGame)
+
+        if (_countFliesEaten >= 3)
         {
-            _camManager.PrioritizeFull();
+            if (myFactory != null)
+                myFactory.enabled = false;
         }
+        
+        
         maxDist += flyValue;
+        maxDist = Mathf.Min(maxDist, HEIGHT_LIMIT);
     }
 
 
