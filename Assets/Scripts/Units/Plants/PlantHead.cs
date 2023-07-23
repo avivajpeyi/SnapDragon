@@ -5,14 +5,14 @@ using UnityEngine;
 public class PlantHead : MonoBehaviour
 {
 
-    WordArt wordArtController;
+    WordArtController _wordArtControllerController;
     PlantController plantController;
     [SerializeField] protected AudioClip flyEatenFX;
     [SerializeField] protected GameObject flyEatenParticles;
 
     private void Start()
     {
-        wordArtController = Resources.Load<GameObject>("WordArtController").GetComponent<WordArt>();
+        _wordArtControllerController = Resources.Load<GameObject>("WordArtController").GetComponent<WordArtController>();
         plantController = GetComponentInParent<PlantController>();
         flyEatenFX = Resources.Load<AudioClip>("FlyEatenAudio");
         flyEatenParticles = Resources.Load<GameObject>("FlyEatenFx");
@@ -34,7 +34,7 @@ public class PlantHead : MonoBehaviour
 
             BaseFly fly = other.gameObject.GetComponent<BaseFly>();
             fly.OnEaten();
-             wordArtController.spawnWordArt(WordArt.WordArtTypes.Nom,transform.position,3);
+             _wordArtControllerController.spawnWordArt(transform.position, WordArtController.WordArtTypes.Nom);
             if (fly.type == BaseFly.FlyType.Winning)
             {
                 GameManager.Instance.ChangeState(GameState.GameOver);
