@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class BobUpAndDown : MonoBehaviour
 {
-    float bobHeight = 0.05f;
+    float bobHeight = 100f;
 
     private void Start()
     {
